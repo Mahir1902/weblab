@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/Users/mahirhaque/Documents/Coding/WebLab website\" -type f -name \"*.json\" -o -name \"*.js\" -o -name \"*.ts\" -o -name \"*.tsx\" -o -name \"*.jsx\" 2>/dev/null | head -50)",
+      "Bash(file \"/Users/mahirhaque/Documents/Coding/WebLab website/assets/WebLab \\(2\\).png\" 2>/dev/null && identify \"/Users/mahirhaque/Documents/Coding/WebLab website/assets/WebLab \\(2\\).png\" 2>/dev/null || echo \"identify not available\")",
+      "Bash(node --version && npm --version && npx --version 2>/dev/null)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes 2>&1 | tail -20)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && npx create-next-app@latest weblab-temp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes 2>&1 | tail -20)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && cp -r weblab-temp/. . && rm -rf weblab-temp && ls)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && npm install framer-motion 2>&1 | tail -5 && cp \"assets/WebLab \\(2\\).png\" public/logo.png && echo \"logo copied\")",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && npm run build 2>&1)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && npm install 2>&1 | tail -5)",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website/node_modules/.bin\" && rm -f next && ln -s \"../next/dist/bin/next\" next && ls -la next)",
+      "Bash(pkill -f \"next dev\" 2>/dev/null; echo \"killed\")",
+      "Skill(playwright-cli)",
+      "Bash(npx playwright-cli:*)",
+      "Bash(which playwright:*)",
+      "Bash(curl -s http://localhost:3001/ | grep -o 'Book a Free Strategy Call\\\\|WebLab\\\\|book-a-call' | head -5)",
+      "Bash(curl -s http://localhost:3001/services | grep -o 'High-Converting Websites\\\\|Missed Call\\\\|CRM.*Lead\\\\|AI Chatbot\\\\|Google Review\\\\|Local SEO' | sort -u)",
+      "Bash(pkill -f \"next dev\" 2>/dev/null; echo \"done\")",
+      "Bash(cd \"/Users/mahirhaque/Documents/Coding/WebLab website\" && sed -i '' 's/\"name\": \"weblab-temp\"/\"name\": \"weblab-website\"/' package.json && cat package.json | grep '\"name\"')",
+      "Bash(mkdir -p \"/Users/mahirhaque/.claude/projects/-Users-mahirhaque-Documents-Coding-WebLab-website/memory\" && cat > \"/Users/mahirhaque/.claude/projects/-Users-mahirhaque-Documents-Coding-WebLab-website/memory/MEMORY.md\" << 'EOF'\n# WebLab Website — Project Memory\n\n## Stack\n- Next.js 16.1.6, React 19, Tailwind CSS v4, Framer Motion v12, TypeScript\n- No tailwind.config.ts — design tokens live in `src/app/globals.css` @theme block\n- App Router with `src/` directory, `@/*` import alias\n\n## Project structure\n```\nsrc/app/         — page.tsx, layout.tsx, globals.css, services/, about/, contact/\nsrc/components/  — layout/ \\(Navbar, Footer\\), ui/ \\(AnimatedSection, ServiceCard, BookingCTA, ChatbotPlaceholder\\), home/ \\(AnimatedHero, HeroWrapper, SocialProofBar, ProblemSolution, ServicesOverview, HowItWorks\\)\nsrc/lib/         — constants.ts \\(services, nav, site config\\), metadata.ts\nsrc/types/       — index.ts \\(Service, NavLink, SiteConfig\\)\n```\n\n## Key decisions\n- Accent: Electric Blue #3B82F6, Background: #0A0A0A\n- All booking CTAs use `NEXT_PUBLIC_BOOKING_URL` env var \\(currently `#book-a-call`\\)\n- GHL embed placeholders: `#ghl-calendar-embed` and `#ghl-form-embed` in contact page\n- `AnimatedHero` uses `HeroWrapper.tsx` \\('use client'\\) because Next.js 16 forbids `ssr:false` in Server Components\n- Framer Motion v12: use cubic-bezier arrays `[0.25, 0.46, 0.45, 0.94]` instead of string `'easeOut'`\n- `.bin/next` must be a symlink to `../next/dist/bin/next` \\(not a file copy\\)\n\n## Build\n- `npm run build` passes with 0 errors, all 4 routes are static\n- Security headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy all present\n- GHL CSP allowlist in next.config.ts\nEOF\necho \"memory saved\")",
+      "WebSearch",
+      "WebFetch(domain:help.gohighlevel.com)",
+      "WebFetch(domain:funnelscene.com)",
+      "WebFetch(domain:ghl-services-playbooks-automation-crm-marketing.ghost.io)",
+      "WebFetch(domain:consultevo.com)",
+      "Bash(cd:*)",
+      "WebFetch(domain:www.greptile.com)"
+    ]
+  }
+}
