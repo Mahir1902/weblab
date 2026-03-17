@@ -26,7 +26,8 @@
       "WebFetch(domain:ghl-services-playbooks-automation-crm-marketing.ghost.io)",
       "WebFetch(domain:consultevo.com)",
       "Bash(cd:*)",
-      "WebFetch(domain:www.greptile.com)"
+      "WebFetch(domain:www.greptile.com)",
+      "Bash(node:*)"
     ]
   }
 }

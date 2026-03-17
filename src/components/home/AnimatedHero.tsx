@@ -1,9 +1,47 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, type Variants } from 'framer-motion';
 import { BOOKING_URL, SITE_CONFIG } from '@/lib/constants';
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type Point = { x: number; y: number };
+
+interface WaveConfig {
+  offset: number;
+  amplitude: number;
+  frequency: number;
+  color: string;
+  opacity: number;
+}
+
+// ─── Wave palette (WebLab electric-blue / indigo theme) ───────────────────────
+
+const WAVE_PALETTE: WaveConfig[] = [
+  { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(59,130,246,0.9)',  opacity: 0.40 },
+  { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(99,102,241,0.85)', opacity: 0.32 },
+  { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(96,165,250,0.8)',  opacity: 0.28 },
+  { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(147,197,253,0.6)', opacity: 0.22 },
+  { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(37,99,235,0.7)',   opacity: 0.18 },
+];
+
+// ─── Framer Motion variants ───────────────────────────────────────────────────
+
+const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number];
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
+};
+
+// ─── Typewriter ───────────────────────────────────────────────────────────────
 
 const PHRASES = [
   'plumbers', 'electricians', 'builders', 'landscapers',
@@ -17,7 +55,6 @@ function TypewriterText() {
 
   useEffect(() => {
     const current = PHRASES[phraseIdx];
-
     if (!deleting && charIdx < current.length) {
       const t = setTimeout(() => setCharIdx(c => c + 1), 65);
       return () => clearTimeout(t);
@@ -45,19 +82,113 @@ function TypewriterText() {
   );
 }
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+// ─── Canvas wave background ───────────────────────────────────────────────────
 
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
+function WaveCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const mouseRef  = useRef<Point>({ x: 0, y: 0 });
+  const targetRef = useRef<Point>({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let rafId: number;
+    let time = 0;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mouseInfluence  = prefersReducedMotion ? 0   : 70;
+    const influenceRadius = prefersReducedMotion ? 1   : 320;
+    const smoothing       = prefersReducedMotion ? 1   : 0.1;
+
+    const resize = () => {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const c = { x: canvas.width / 2, y: canvas.height / 2 };
+      mouseRef.current  = { ...c };
+      targetRef.current = { ...c };
+    };
+
+    const onMouseMove  = (e: MouseEvent) => { targetRef.current = { x: e.clientX, y: e.clientY }; };
+    const onMouseLeave = () => { targetRef.current = { x: canvas.width / 2, y: canvas.height / 2 }; };
+
+    resize();
+    window.addEventListener('resize',     resize);
+    window.addEventListener('mousemove',  onMouseMove);
+    window.addEventListener('mouseleave', onMouseLeave);
+
+    const drawWave = (wave: WaveConfig) => {
+      ctx.save();
+      ctx.beginPath();
+
+      for (let x = 0; x <= canvas.width; x += 4) {
+        const dx      = x - mouseRef.current.x;
+        const dy      = canvas.height / 2 - mouseRef.current.y;
+        const dist    = Math.sqrt(dx * dx + dy * dy);
+        const infl    = Math.max(0, 1 - dist / influenceRadius);
+        const mEffect = infl * mouseInfluence * Math.sin(time * 0.001 + x * 0.01 + wave.offset);
+
+        const y =
+          canvas.height / 2 +
+          Math.sin(x * wave.frequency + time * 0.002 + wave.offset) * wave.amplitude +
+          Math.sin(x * wave.frequency * 0.4 + time * 0.003)         * (wave.amplitude * 0.45) +
+          mEffect;
+
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+
+      ctx.lineWidth   = 2.5;
+      ctx.strokeStyle = wave.color;
+      ctx.globalAlpha = wave.opacity;
+      ctx.shadowBlur  = 40;
+      ctx.shadowColor = wave.color;
+      ctx.stroke();
+      ctx.restore();
+    };
+
+    const animate = () => {
+      if (!prefersReducedMotion) time += 1;
+
+      mouseRef.current.x += (targetRef.current.x - mouseRef.current.x) * smoothing;
+      mouseRef.current.y += (targetRef.current.y - mouseRef.current.y) * smoothing;
+
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      grad.addColorStop(0, '#0A0A0A');
+      grad.addColorStop(1, '#0D0D16');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur  = 0;
+
+      WAVE_PALETTE.forEach(drawWave);
+
+      rafId = window.requestAnimationFrame(animate);
+    };
+
+    rafId = window.requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener('resize',     resize);
+      window.removeEventListener('mousemove',  onMouseMove);
+      window.removeEventListener('mouseleave', onMouseLeave);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className="absolute inset-0 h-full w-full"
+    />
+  );
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
 
 export default function AnimatedHero() {
   return (
@@ -65,7 +196,10 @@ export default function AnimatedHero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A]"
     >
+      {/* Canvas wave background */}
+      <WaveCanvas />
 
+      {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center">
         <motion.div
           variants={container}
@@ -139,28 +273,17 @@ export default function AnimatedHero() {
             variants={item}
             className="flex items-center gap-6 mt-4 text-sm text-[#6B7280]"
           >
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#3B82F6]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              No lock-in contracts
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#3B82F6]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Fully done-for-you
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#3B82F6]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Sydney local
-            </span>
+            {['No lock-in contracts', 'Fully done-for-you', 'Sydney local'].map((label) => (
+              <span key={label} className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#3B82F6]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {label}
+              </span>
+            ))}
           </motion.div>
         </motion.div>
       </div>
-
     </section>
   );
 }
