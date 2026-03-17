@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { SITE_CONFIG, BOOKING_URL } from '@/lib/constants';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
@@ -142,35 +143,23 @@ export default function ContactPage() {
                   Prefer to write? Fill out the form and we&apos;ll get back to you within 24 hours.
                 </p>
 
-                {/*
-                  ============================================================
-                  GHL FORM EMBED — INJECTION POINT
-                  ============================================================
-                  To add the GoHighLevel contact form:
-                  1. In GHL → Sites → Forms → your form → Embed Code
-                  2. Copy the embed script / iframe code
-                  3. Either:
-                     a) Replace the placeholder div below with the embed HTML
-                        (wrap in a client component if using <script> tags)
-                     b) Or inject via next/script in a <GHLScripts /> component
-                  4. The form should render inside #ghl-form-embed below
-                  ============================================================
-                */}
-                <div
-                  id="ghl-form-embed"
-                  className="min-h-[400px] rounded-xl border border-dashed border-[#1F2937] flex items-center justify-center"
-                  aria-label="Contact form, coming soon"
-                >
-                  <div className="text-center px-4">
-                    <div className="w-12 h-12 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/20 flex items-center justify-center text-xl mx-auto mb-4">
-                      📬
-                    </div>
-                    <p className="text-[#6B7280] text-sm mb-1">Contact form loads here</p>
-                    <p className="text-[#4B5563] text-xs">
-                      GoHighLevel form embed — see code comment above
-                    </p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://brand.webl4b.com/widget/form/TXCbBbnT8IHqUOPiJaHv"
+                  id="inline-TXCbBbnT8IHqUOPiJaHv"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="WebLab Contact Form"
+                  data-height="815"
+                  data-layout-iframe-id="inline-TXCbBbnT8IHqUOPiJaHv"
+                  data-form-id="TXCbBbnT8IHqUOPiJaHv"
+                  title="WebLab Contact Form"
+                  style={{ width: '100%', height: '815px', border: 'none', borderRadius: '3px' }}
+                />
 
                 {/* Email fallback */}
                 <p className="text-[#6B7280] text-xs mt-4 text-center">
@@ -184,6 +173,11 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <Script
+        src="https://brand.webl4b.com/js/form_embed.js"
+        strategy="afterInteractive"
+      />
     </>
   );
 }
