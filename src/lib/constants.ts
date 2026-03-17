@@ -7,9 +7,9 @@ export const SITE_CONFIG: SiteConfig = {
     'Sydney-based software agency building high-converting websites, CRM automation, and lead capture systems for local service businesses.',
   url: 'https://weblab.com.au',
   location: 'Sydney, NSW, Australia',
-  abn: 'XX XXX XXX XXX',
-  email: 'hello@weblab.com.au',
-  phone: '+61 4XX XXX XXX',
+  abn: '49 830 374 904',
+  email: 'solutions.webl4b@gmail.com',
+  phone: '+61 468 094 066',
   socials: {
     instagram: '#',
     linkedin: '#',
