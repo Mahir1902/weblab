@@ -19,6 +19,29 @@ Master index of all development tasks. Append-only — never overwrite existing 
 - Pre-existing raw hex color literals in contact page should eventually use CSS design tokens (flagged by quality review, out of scope here)
 ---
 
+## 2026-04-11 — UI Test: Light/Dark Theme Switching
+**Status:** complete
+**Folder:** .claude/progress/2026-04-11-light-dark-theme/
+**Files changed:** none (test-only run; `@playwright/test` installed as devDependency)
+**Build passed:** yes (pre-existing)
+**UI test result:** 4 failures (2 Critical, 1 Major, 1 Minor)
+### Completed
+- Tested all 4 pages (`/`, `/services`, `/about`, `/contact`) at 375px, 768px, 1440px in both dark and light themes
+- Captured 30 screenshots across all page/breakpoint/theme combinations
+- Verified ThemeToggle presence (desktop + mobile), default OS preference detection, toggle interaction, localStorage persistence, hydration (0 errors), focus ring, AnimatedSection reveals, no horizontal scroll
+### Failures Found
+- **Critical:** `AnimatedHero` is architecturally dark-only — `bg-[#0A0A0A]` on section + hardcoded canvas gradient `#0A0A0A → #0D0D16` + `text-[#F9FAFB]` h1 — hero section ignores light theme entirely
+- **Critical:** 14 hardcoded hex values in `AnimatedHero.tsx` bypass design tokens and do not respond to theme switching
+- **Major:** `#ghl-form-embed` placeholder ID absent — contact page right-hand form uses `id="inline-TXCbBbnT8IHqUOPiJaHv"` (live GHL iframe), not `#ghl-form-embed`
+- **Minor:** `BOOKING_URL` resolves to empty string `""` rather than `#book-a-call` fallback — likely `NEXT_PUBLIC_BOOKING_URL=""` set in env
+- **Pre-existing:** GHL iframe on `/contact` 403s + X-Frame-Options violation (2 console errors, not a theme regression)
+### Deferred / follow-up
+- Decide: keep hero always-dark-by-design (add explicit opt-out comment + force `.dark` scoping) OR build light-mode hero variant
+- Fix `BOOKING_URL` empty string — check `.env.local` for `NEXT_PUBLIC_BOOKING_URL=""`
+- Consider updating `#ghl-form-embed` documentation to reflect that live GHL iframe replaced the placeholder
+
+---
+
 ## 2026-03-17 — Replace hero background: canvas glowy waves
 **Status:** complete
 **Files changed:** `src/components/home/AnimatedHero.tsx`, `src/app/globals.css`

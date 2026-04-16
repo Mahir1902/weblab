@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import { BOOKING_URL, SITE_CONFIG } from '@/lib/constants';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -17,14 +18,22 @@ interface WaveConfig {
   opacity: number;
 }
 
-// ─── Wave palette (WebLab electric-blue / indigo theme) ───────────────────────
+// ─── Wave palettes ────────────────────────────────────────────────────────────
 
-const WAVE_PALETTE: WaveConfig[] = [
+const DARK_WAVES: WaveConfig[] = [
   { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(59,130,246,0.9)',  opacity: 0.40 },
   { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(99,102,241,0.85)', opacity: 0.32 },
   { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(96,165,250,0.8)',  opacity: 0.28 },
   { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(147,197,253,0.6)', opacity: 0.22 },
   { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(37,99,235,0.7)',   opacity: 0.18 },
+];
+
+const LIGHT_WAVES: WaveConfig[] = [
+  { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(37,99,235,0.7)',   opacity: 0.50 },
+  { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(67,56,202,0.65)',  opacity: 0.42 },
+  { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(29,78,216,0.6)',   opacity: 0.38 },
+  { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(79,70,229,0.55)',  opacity: 0.30 },
+  { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(37,99,235,0.5)',   opacity: 0.24 },
 ];
 
 // ─── Framer Motion variants ───────────────────────────────────────────────────
@@ -68,23 +77,26 @@ function TypewriterText() {
       return () => clearTimeout(t);
     }
     if (deleting && charIdx === 0) {
-      setDeleting(false);
-      setPhraseIdx(i => (i + 1) % PHRASES.length);
+      const t = setTimeout(() => {
+        setDeleting(false);
+        setPhraseIdx(i => (i + 1) % PHRASES.length);
+      }, 0);
+      return () => clearTimeout(t);
     }
   }, [charIdx, deleting, phraseIdx]);
 
   return (
-    <span className="font-mono text-sm text-[#6B7280]">
+    <span className="font-mono text-sm text-text-dim">
       for{' '}
-      <span className="text-[#9CA3AF]">{PHRASES[phraseIdx].slice(0, charIdx)}</span>
-      <span className="text-[#3B82F6] animate-pulse">|</span>
+      <span className="text-text-muted">{PHRASES[phraseIdx].slice(0, charIdx)}</span>
+      <span className="text-accent animate-pulse">|</span>
     </span>
   );
 }
 
 // ─── Canvas wave background ───────────────────────────────────────────────────
 
-function WaveCanvas() {
+function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const mouseRef  = useRef<Point>({ x: 0, y: 0 });
   const targetRef = useRef<Point>({ x: 0, y: 0 });
@@ -137,7 +149,7 @@ function WaveCanvas() {
           Math.sin(x * wave.frequency * 0.4 + time * 0.003)         * (wave.amplitude * 0.45) +
           mEffect;
 
-        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        if (x === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
       }
 
       ctx.lineWidth   = 2.5;
@@ -155,16 +167,23 @@ function WaveCanvas() {
       mouseRef.current.x += (targetRef.current.x - mouseRef.current.x) * smoothing;
       mouseRef.current.y += (targetRef.current.y - mouseRef.current.y) * smoothing;
 
+      const isDark = isDarkRef.current;
       const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      grad.addColorStop(0, '#0A0A0A');
-      grad.addColorStop(1, '#0D0D16');
+      if (isDark) {
+        grad.addColorStop(0, '#0A0A0A');
+        grad.addColorStop(1, '#0D0D16');
+      } else {
+        grad.addColorStop(0, '#FFFFFF');
+        grad.addColorStop(1, '#EFF6FF');
+      }
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.globalAlpha = 1;
       ctx.shadowBlur  = 0;
 
-      WAVE_PALETTE.forEach(drawWave);
+      const palette = isDark ? DARK_WAVES : LIGHT_WAVES;
+      palette.forEach(drawWave);
 
       rafId = window.requestAnimationFrame(animate);
     };
@@ -177,7 +196,7 @@ function WaveCanvas() {
       window.removeEventListener('mouseleave', onMouseLeave);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isDarkRef]);
 
   return (
     <canvas
@@ -191,13 +210,16 @@ function WaveCanvas() {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 export default function AnimatedHero() {
+  const { resolvedTheme } = useTheme();
+  const isDarkRef = useRef(true);
+  isDarkRef.current = resolvedTheme !== 'light';
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Canvas wave background */}
-      <WaveCanvas />
+      <WaveCanvas isDarkRef={isDarkRef} />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center">
@@ -209,7 +231,7 @@ export default function AnimatedHero() {
         >
           {/* Badge */}
           <motion.div variants={item}>
-            <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase">
+            <span className="font-mono text-xs text-accent tracking-widest uppercase">
               [SYDNEY-BASED SOFTWARE AGENCY]
             </span>
           </motion.div>
@@ -217,22 +239,13 @@ export default function AnimatedHero() {
           {/* Headline */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#F9FAFB] leading-tight tracking-tight max-w-4xl"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-text-primary leading-tight tracking-tight max-w-4xl"
           >
             {SITE_CONFIG.tagline.split('While You Sleep').map((part, i) =>
               i === 0 ? (
                 <span key={i}>
                   {part}
-                  <span
-                    style={{
-                      background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #93C5FD 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    While You Sleep
-                  </span>
+                  <span className="gradient-text">While You Sleep</span>
                 </span>
               ) : null
             )}
@@ -246,7 +259,7 @@ export default function AnimatedHero() {
           {/* Subheadline */}
           <motion.p
             variants={item}
-            className="text-lg sm:text-xl text-[#6B7280] max-w-2xl leading-relaxed font-normal"
+            className="text-lg sm:text-xl text-text-muted max-w-2xl leading-relaxed font-normal"
           >
             We build smart websites, CRM automation, and lead capture systems
             for Sydney&apos;s local service businesses, so you book more jobs without working more hours.
@@ -256,13 +269,13 @@ export default function AnimatedHero() {
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 mt-2">
             <Link
               href={BOOKING_URL}
-              className="px-8 py-4 rounded-xl bg-[#3B82F6] text-white text-base font-semibold hover:bg-[#2563EB] hover:scale-105 transition-all duration-200 glow-blue-sm"
+              className="px-8 py-4 rounded-xl bg-accent text-white text-base font-semibold hover:bg-accent-hover hover:scale-105 transition-all duration-200 glow-blue-sm"
             >
               Book a Free Strategy Call
             </Link>
             <Link
               href="/services"
-              className="px-8 py-4 rounded-xl border border-[#1F2937] text-[#D1D5DB] text-base font-medium hover:border-[#3B82F6]/50 hover:text-[#F9FAFB] transition-all duration-200"
+              className="px-8 py-4 rounded-xl border border-border text-text-secondary text-base font-medium hover:border-accent/50 hover:text-text-primary transition-all duration-200"
             >
               See What We Build
             </Link>
@@ -271,11 +284,11 @@ export default function AnimatedHero() {
           {/* Social proof micro */}
           <motion.div
             variants={item}
-            className="flex items-center gap-6 mt-4 text-sm text-[#6B7280]"
+            className="flex items-center gap-6 mt-4 text-sm text-text-muted"
           >
             {['No lock-in contracts', 'Fully done-for-you', 'Sydney local'].map((label) => (
               <span key={label} className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-[#3B82F6]" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 {label}

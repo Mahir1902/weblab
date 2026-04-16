@@ -1,19 +1,59 @@
 @import "tailwindcss";
 
+/* Runtime theme variables */
+:root {
+  /* Light theme (default) */
+  color-scheme: light;
+  --rt-bg: #FFFFFF;
+  --rt-surface: #F9FAFB;
+  --rt-surface-2: #F3F4F6;
+  --rt-accent: #2563EB;
+  --rt-accent-hover: #1D4ED8;
+  --rt-accent-dim: rgba(37, 99, 235, 0.10);
+  --rt-text-primary: #111827;
+  --rt-text-secondary: #374151;
+  --rt-text-muted: #6B7280;
+  --rt-text-dim: #9CA3AF;
+  --rt-border: #E5E7EB;
+  --rt-border-subtle: #F3F4F6;
+  --rt-danger: #EF4444;
+  --rt-success: #10B981;
+}
+
+.dark {
+  /* Dark theme */
+  color-scheme: dark;
+  --rt-bg: #0A0A0A;
+  --rt-surface: #111111;
+  --rt-surface-2: #161616;
+  --rt-accent: #3B82F6;
+  --rt-accent-hover: #2563EB;
+  --rt-accent-dim: rgba(59, 130, 246, 0.15);
+  --rt-text-primary: #F9FAFB;
+  --rt-text-secondary: #D1D5DB;
+  --rt-text-muted: #9CA3AF;
+  --rt-text-dim: #6B7280;
+  --rt-border: #1F2937;
+  --rt-border-subtle: #111827;
+  --rt-danger: #EF4444;
+  --rt-success: #10B981;
+}
+
 @theme inline {
-  --color-background: #0A0A0A;
-  --color-surface: #111111;
-  --color-surface-2: #161616;
-  --color-accent: #3B82F6;
-  --color-accent-hover: #2563EB;
-  --color-accent-dim: rgba(59, 130, 246, 0.15);
-  --color-text-primary: #F9FAFB;
-  --color-text-secondary: #D1D5DB;
-  --color-text-muted: #9CA3AF;
-  --color-border: #1F2937;
-  --color-border-subtle: #111827;
-  --color-danger: #EF4444;
-  --color-success: #10B981;
+  --color-background: var(--rt-bg);
+  --color-surface: var(--rt-surface);
+  --color-surface-2: var(--rt-surface-2);
+  --color-accent: var(--rt-accent);
+  --color-accent-hover: var(--rt-accent-hover);
+  --color-accent-dim: var(--rt-accent-dim);
+  --color-text-primary: var(--rt-text-primary);
+  --color-text-secondary: var(--rt-text-secondary);
+  --color-text-muted: var(--rt-text-muted);
+  --color-text-dim: var(--rt-text-dim);
+  --color-border: var(--rt-border);
+  --color-border-subtle: var(--rt-border-subtle);
+  --color-danger: var(--rt-danger);
+  --color-success: var(--rt-success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-syne: var(--font-syne);
@@ -27,12 +67,14 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0A0A0A;
+  background-color: var(--rt-bg);
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
 body {
-  background: #0A0A0A;
-  color: #F9FAFB;
+  background: var(--rt-bg);
+  color: var(--rt-text-primary);
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,19 +86,19 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: var(--rt-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1F2937;
+  background: var(--rt-border);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: var(--rt-accent);
 }
 
 /* Focus ring */
 :focus-visible {
-  outline: 2px solid #3B82F6;
+  outline: 2px solid var(--rt-accent);
   outline-offset: 2px;
 }
 
@@ -67,7 +109,7 @@ h1, h2, h3 {
 
 /* Section divider */
 .section-divider {
-  border-top: 1px solid #1F2937;
+  border-top: 1px solid var(--rt-border);
 }
 
 /* CSS Marquee animation */
@@ -106,10 +148,9 @@ h1, h2, h3 {
   height: 1px;
   background: repeating-linear-gradient(
     90deg,
-    #1F2937 0,
-    #1F2937 6px,
+    var(--rt-border) 0,
+    var(--rt-border) 6px,
     transparent 6px,
     transparent 12px
   );
 }
-

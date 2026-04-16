@@ -4,14 +4,23 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, BOOKING_URL } from '@/lib/constants';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(t);
+  }, []);
 
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
@@ -26,19 +35,21 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-[#1F2937] ${
-        scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md' : 'bg-[#0A0A0A]/70 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border ${
+        scrolled
+          ? 'bg-(--color-bg)/90 backdrop-blur-md'
+          : 'bg-(--color-bg)/70 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="/logo.png"
+            src={mounted && resolvedTheme === 'light' ? '/logo-light.png' : '/logo.png'}
             alt="WebLab"
             width={220}
             height={56}
-            className="h-32 w-auto object-contain"
+            className= {`${mounted && resolvedTheme === 'light' ? 'h-[3.4rem] w-auto object-contain' : 'h-32 w-auto object-contain'}`}
             priority
           />
         </Link>
@@ -51,8 +62,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   pathname === link.href
-                    ? 'text-[#3B82F6]'
-                    : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                    ? 'text-accent'
+                    : 'text-text-muted hover:text-text-primary'
                 }`}
               >
                 {link.label}
@@ -61,39 +72,43 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center">
+        {/* Desktop CTA + ThemeToggle */}
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href={BOOKING_URL}
-            className="px-5 py-2.5 rounded-lg bg-[#3B82F6] text-white text-sm font-semibold hover:bg-[#2563EB] transition-all duration-200"
+            className="px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-all duration-200"
           >
             Book a Call
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-[#1F2937] transition-colors"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-        >
-          <span
-            className={`block w-5 h-0.5 bg-[#F9FAFB] transition-transform duration-300 ${
-              menuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-[#F9FAFB] transition-opacity duration-300 ${
-              menuOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-[#F9FAFB] transition-transform duration-300 ${
-              menuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
+        {/* Mobile: ThemeToggle + hamburger */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            className="flex flex-col gap-1.5 p-2 rounded-md hover:bg-surface transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+          >
+            <span
+              className={`block w-5 h-0.5 bg-text-primary transition-transform duration-300 ${
+                menuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-text-primary transition-opacity duration-300 ${
+                menuOpen ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-text-primary transition-transform duration-300 ${
+                menuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -104,7 +119,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.42, 0, 0.58, 1] }}
-            className="md:hidden overflow-hidden bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#1F2937]"
+            className="md:hidden overflow-hidden bg-(--color-bg)/95 backdrop-blur-md border-b border-border"
           >
             <motion.ul
               initial="closed"
@@ -128,8 +143,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`block px-3 py-3 rounded-lg text-base font-medium transition-colors ${
                       pathname === link.href
-                        ? 'text-[#3B82F6] bg-[#3B82F6]/10'
-                        : 'text-[#D1D5DB] hover:text-[#F9FAFB] hover:bg-[#1F2937]'
+                        ? 'text-accent bg-accent-dim'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-surface'
                     }`}
                   >
                     {link.label}
@@ -145,7 +160,7 @@ export default function Navbar() {
               >
                 <Link
                   href={BOOKING_URL}
-                  className="block w-full text-center px-5 py-3 rounded-lg bg-[#3B82F6] text-white font-semibold hover:bg-[#2563EB] transition-colors"
+                  className="block w-full text-center px-5 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent-hover transition-colors"
                 >
                   Book a Call
                 </Link>

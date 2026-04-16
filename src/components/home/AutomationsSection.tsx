@@ -35,17 +35,17 @@ const automations = [
 
 export default function AutomationsSection() {
   return (
-    <section className="bg-[#0A0A0A] border-t border-[#1F2937] py-20 sm:py-28">
+    <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-6 block">
+          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
             [AI AUTOMATIONS]
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#F9FAFB] mb-4 mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
             Your Sales Team, Running 24/7
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
             Set it once and watch it work. Our AI automations handle follow-up, lead nurturing, and customer support, so you focus on delivering the work.
           </p>
         </div>
@@ -57,19 +57,19 @@ export default function AutomationsSection() {
             return (
               <div
                 key={auto.step}
-                className={`relative rounded-2xl border border-[#1F2937] bg-[#111111] p-6 hover:border-[#3B82F6]/40 transition-all duration-300 ${
+                className={`relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-accent)]/40 transition-all duration-300 ${
                   index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 {/* Step number */}
-                <div className="absolute top-4 right-4 text-[#1F2937] font-bold text-3xl select-none tabular-nums" style={{ fontFamily: 'var(--font-syne)' }} aria-hidden="true">
+                <div className="absolute top-4 right-4 text-[var(--color-border)] font-bold text-3xl select-none tabular-nums" style={{ fontFamily: 'var(--font-syne)' }} aria-hidden="true">
                   {auto.step}
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-[#3B82F6]/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#3B82F6]" />
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
                 </div>
-                <h3 className="text-[#F9FAFB] font-semibold text-lg mb-2 pr-8">{auto.title}</h3>
-                <p className="text-[#9CA3AF] text-sm leading-relaxed">{auto.description}</p>
+                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2 pr-8">{auto.title}</h3>
+                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{auto.description}</p>
               </div>
             );
           })}

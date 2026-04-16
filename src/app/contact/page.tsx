@@ -25,17 +25,17 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-12 bg-[#0A0A0A]">
+      <section className="pt-32 pb-12 bg-[var(--color-bg)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-6 block">
+              <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
                 [LET&apos;S TALK]
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-[#F9FAFB] mb-4 mt-2">
+              <h1 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
                 Get in Touch
               </h1>
-              <p className="text-[#9CA3AF] text-lg max-w-xl mx-auto">
+              <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
                 We&apos;d love to hear about your business. Book a call or send us a message below.
               </p>
             </div>
@@ -44,61 +44,61 @@ export default function ContactPage() {
       </section>
 
       {/* Split layout */}
-      <section className="bg-[#0A0A0A] pb-20 sm:pb-28">
+      <section className="bg-[var(--color-bg)] pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left: Contact info + calendar */}
             <AnimatedSection>
               <div className="flex flex-col gap-8">
                 {/* Contact details */}
-                <div className="rounded-2xl border border-[#1F2937] bg-[#111111] p-6 sm:p-8">
-                  <h2 className="text-xl font-semibold text-[#F9FAFB] mb-6">Contact Details</h2>
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8">
+                  <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-6">Contact Details</h2>
                   <ul className="flex flex-col gap-5">
                     <li className="flex items-start gap-4">
-                      <div className="w-9 h-9 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="text-[#6B7280] text-xs mb-0.5">Email</p>
-                        <a href={`mailto:${SITE_CONFIG.email}`} className="text-[#D1D5DB] text-sm hover:text-[#3B82F6] transition-colors">
+                        <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Email</p>
+                        <a href={`mailto:${SITE_CONFIG.email}`} className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors">
                           {SITE_CONFIG.email}
                         </a>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
-                      <div className="w-9 h-9 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="text-[#6B7280] text-xs mb-0.5">Phone</p>
-                        <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`} className="text-[#D1D5DB] text-sm hover:text-[#3B82F6] transition-colors">
+                        <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Phone</p>
+                        <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`} className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors">
                           {SITE_CONFIG.phone}
                         </a>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
-                      <div className="w-9 h-9 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="text-[#6B7280] text-xs mb-0.5">Location</p>
-                        <p className="text-[#D1D5DB] text-sm">{SITE_CONFIG.location}</p>
+                        <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Location</p>
+                        <p className="text-[var(--color-text-secondary)] text-sm">{SITE_CONFIG.location}</p>
                       </div>
                     </li>
                   </ul>
                 </div>
 
                 {/* GHL Calendar Embed */}
-                <div className="rounded-2xl border border-[#3B82F6]/30 bg-[#3B82F6]/5 p-6 sm:p-8">
-                  <h2 className="text-xl font-semibold text-[#F9FAFB] mb-2">Book a Free Strategy Call</h2>
-                  <p className="text-[#9CA3AF] text-sm mb-6">
+                <div className="rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-dim)] p-6 sm:p-8">
+                  <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">Book a Free Strategy Call</h2>
+                  <p className="text-[var(--color-text-muted)] text-sm mb-6">
                     Pick a time that works for you. 30 minutes, no pressure, just strategy.
                   </p>
 
@@ -118,14 +118,14 @@ export default function ContactPage() {
                   */}
                   <div
                     id="ghl-calendar-embed"
-                    className="min-h-[200px] rounded-xl border border-dashed border-[#3B82F6]/30 flex items-center justify-center"
+                    className="min-h-[200px] rounded-xl border border-dashed border-[var(--color-accent)]/30 flex items-center justify-center"
                     aria-label="Booking calendar, coming soon"
                   >
                     <div className="text-center">
-                      <p className="text-[#6B7280] text-sm mb-4">Calendar booking widget loads here</p>
+                      <p className="text-[var(--color-text-dim)] text-sm mb-4">Calendar booking widget loads here</p>
                       <Link
                         href={BOOKING_URL}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#3B82F6] text-white text-sm font-semibold hover:bg-[#2563EB] hover:scale-105 transition-all duration-200"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--color-accent)] text-white text-sm font-semibold hover:bg-[var(--color-accent-hover)] hover:scale-105 transition-all duration-200"
                       >
                         Book a Free Call
                       </Link>
@@ -137,9 +137,9 @@ export default function ContactPage() {
 
             {/* Right: GHL Contact Form */}
             <AnimatedSection delay={0.1}>
-              <div className="rounded-2xl border border-[#1F2937] bg-[#111111] p-6 sm:p-8 h-full">
-                <h2 className="text-xl font-semibold text-[#F9FAFB] mb-2">Send Us a Message</h2>
-                <p className="text-[#9CA3AF] text-sm mb-6">
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8 h-full">
+                <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">Send Us a Message</h2>
+                <p className="text-[var(--color-text-muted)] text-sm mb-6">
                   Prefer to write? Fill out the form and we&apos;ll get back to you within 24 hours.
                 </p>
 
@@ -162,9 +162,9 @@ export default function ContactPage() {
                 />
 
                 {/* Email fallback */}
-                <p className="text-[#6B7280] text-xs mt-4 text-center">
+                <p className="text-[var(--color-text-dim)] text-xs mt-4 text-center">
                   Or email us directly at{' '}
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-[#3B82F6] hover:underline">
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-[var(--color-accent)] hover:underline">
                     {SITE_CONFIG.email}
                   </a>
                 </p>

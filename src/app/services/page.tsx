@@ -48,16 +48,16 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#0A0A0A]">
+      <section className="pt-32 pb-16 bg-[var(--color-bg)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-6 block">
+            <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
               [WHAT WE BUILD]
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#F9FAFB] mb-4 mt-2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
               Systems That Grow Your Business
             </h1>
-            <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+            <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
               Every service we offer is purpose-built for local trade and service businesses in Sydney.
               No cookie-cutter templates. No generic software. Systems that actually work.
             </p>
@@ -66,7 +66,7 @@ export default function ServicesPage() {
       </section>
 
       {/* All 6 service cards */}
-      <section className="bg-[#0A0A0A] pb-20 sm:pb-28">
+      <section className="bg-[var(--color-bg)] pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -81,14 +81,14 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ accordion */}
-      <section className="bg-[#111111] border-y border-[#1F2937] py-24">
+      <section className="bg-[var(--color-surface)] border-y border-[var(--color-border)] py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#F9FAFB] mb-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-3">
                 Common Questions
               </h2>
-              <div className="mx-auto w-12 h-0.5 bg-[#3B82F6] rounded-full" aria-hidden="true" />
+              <div className="mx-auto w-12 h-0.5 bg-[var(--color-accent)] rounded-full" aria-hidden="true" />
             </div>
             <FaqAccordion items={faqs} />
           </AnimatedSection>

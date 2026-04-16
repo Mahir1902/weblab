@@ -58,13 +58,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[#0A0A0A]">
+      <section className="pt-32 pb-20 bg-[var(--color-bg)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-6 block">
+            <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
               [OUR STORY]
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#F9FAFB] mb-6 mt-2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-6 mt-2">
               Built by Builders,{' '}
               <span
                 style={{
@@ -77,7 +77,7 @@ export default function AboutPage() {
                 For Builders
               </span>
             </h1>
-            <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-[var(--color-text-muted)] text-lg leading-relaxed max-w-2xl mx-auto">
               WebLab was founded in Sydney with one goal: give local service businesses the same
               lead generation and automation systems that big companies use, without the big-company
               price tag or complexity.
@@ -87,15 +87,15 @@ export default function AboutPage() {
       </section>
 
       {/* Founding story */}
-      <section className="bg-[#111111] border-y border-[#1F2937] py-20">
+      <section className="bg-[var(--color-surface)] border-y border-[var(--color-border)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-[#F9FAFB] mb-6">
+                <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
                   Why We Started
                 </h2>
-                <div className="flex flex-col gap-4 text-[#9CA3AF] text-base leading-relaxed">
+                <div className="flex flex-col gap-4 text-[var(--color-text-muted)] text-base leading-relaxed">
                   <p>
                     We kept seeing the same story: brilliant tradespeople and service providers
                     losing work to competitors who were worse at their craft, simply because they
@@ -115,20 +115,20 @@ export default function AboutPage() {
               </div>
 
               {/* Mission pull-quote */}
-              <div className="relative rounded-2xl border border-[#3B82F6]/30 bg-[#3B82F6]/5 p-8">
-                <div className="text-6xl text-[#3B82F6]/30 font-serif leading-none mb-4" aria-hidden="true">
+              <div className="relative rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-dim)] p-8">
+                <div className="text-6xl text-[var(--color-accent)]/30 font-serif leading-none mb-4" aria-hidden="true">
                   &ldquo;
                 </div>
-                <blockquote className="text-xl sm:text-2xl font-semibold text-[#F9FAFB] leading-snug mb-6">
+                <blockquote className="text-xl sm:text-2xl font-semibold text-[var(--color-text-primary)] leading-snug mb-6">
                   The best tradie shouldn&apos;t lose to the best marketer. We&apos;re here to make sure they don&apos;t.
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-sm bg-[#0A0A0A] border border-[#3B82F6] flex items-center justify-center text-xs font-bold text-[#3B82F6]">
+                  <div className="w-10 h-10 rounded-sm bg-[var(--color-bg)] border border-[var(--color-accent)] flex items-center justify-center text-xs font-bold text-[var(--color-accent)]">
                     WL
                   </div>
                   <div>
-                    <p className="text-[#F9FAFB] font-medium text-sm">WebLab Team</p>
-                    <p className="text-[#6B7280] text-xs">Sydney, NSW</p>
+                    <p className="text-[var(--color-text-primary)] font-medium text-sm">WebLab Team</p>
+                    <p className="text-[var(--color-text-dim)] text-xs">Sydney, NSW</p>
                   </div>
                 </div>
               </div>
@@ -138,14 +138,14 @@ export default function AboutPage() {
       </section>
 
       {/* Who we work with */}
-      <section className="bg-[#0A0A0A] py-20 sm:py-28">
+      <section className="bg-[var(--color-bg)] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#F9FAFB] mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
                 Who We Work With
               </h2>
-              <p className="text-[#9CA3AF] text-lg max-w-lg mx-auto">
+              <p className="text-[var(--color-text-muted)] text-lg max-w-lg mx-auto">
                 We specialise in local service businesses. If you quote jobs, take bookings,
                 or dispatch crews, we can help.
               </p>
@@ -154,11 +154,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {whoWeWorkWith.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.06}>
-                  <div className="flex flex-col items-center gap-3 p-5 rounded-xl border border-[#1F2937] bg-[#111111] hover:border-[#3B82F6]/30 hover:bg-[#3B82F6]/5 transition-all text-center">
+                  <div className="flex flex-col items-center gap-3 p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-accent)]/30 hover:bg-[var(--color-accent-dim)] transition-all text-center">
                     <span className="text-3xl" role="img" aria-hidden="true">
                       {item.icon}
                     </span>
-                    <span className="text-[#D1D5DB] text-sm font-medium">{item.label}</span>
+                    <span className="text-[var(--color-text-secondary)] text-sm font-medium">{item.label}</span>
                   </div>
                 </AnimatedSection>
               ))}
@@ -168,12 +168,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why WebLab */}
-      <section className="bg-[#111111] border-y border-[#1F2937] py-20">
+      <section className="bg-[var(--color-surface)] border-y border-[var(--color-border)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#F9FAFB] mb-4">Why WebLab?</h2>
-              <p className="text-[#9CA3AF] text-lg max-w-lg mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4">Why WebLab?</h2>
+              <p className="text-[var(--color-text-muted)] text-lg max-w-lg mx-auto">
                 We&apos;re not a generic agency. Here&apos;s what makes us different.
               </p>
             </div>
@@ -182,13 +182,13 @@ export default function AboutPage() {
                 const Icon = item.Icon;
                 return (
                   <AnimatedSection key={i} delay={i * 0.07}>
-                    <div className="rounded-xl border border-[#1F2937] bg-[#0A0A0A] p-6 flex gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-[#3B82F6]" />
+                    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 flex gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-[var(--color-accent)]" />
                       </div>
                       <div>
-                        <h3 className="text-[#F9FAFB] font-semibold mb-1">{item.title}</h3>
-                        <p className="text-[#9CA3AF] text-sm leading-relaxed">{item.body}</p>
+                        <h3 className="text-[var(--color-text-primary)] font-semibold mb-1">{item.title}</h3>
+                        <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{item.body}</p>
                       </div>
                     </div>
                   </AnimatedSection>

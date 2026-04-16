@@ -62,7 +62,7 @@ Every agent must invoke at least one skill before starting. If no installed skil
 ### Phase 1 — Parallel Kickoff (4 agents simultaneously)
 
 **Agent 1: Planning agent**
-- Skill: `vercel-react-best-practices`
+- Skill: `vercel-react-best-practices`, `brainstorming`
 - Reads task + relevant source files → produces implementation plan
 - Output → `.claude/progress/<YYYY-MM-DD>-<slug>/plan.md`
 

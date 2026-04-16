@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ChatbotPlaceholder from '@/components/ui/ChatbotPlaceholder';
 import { SITE_CONFIG } from '@/lib/constants';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -55,14 +56,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased bg-[#0A0A0A] text-[#F9FAFB]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased bg-[var(--color-bg)] text-[var(--color-text-primary)]`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <ChatbotPlaceholder />
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ChatbotPlaceholder />
+        </ThemeProvider>
       </body>
     </html>
   );

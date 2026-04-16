@@ -22,18 +22,18 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         return (
           <div
             key={i}
-            className={`border-b border-[#1F2937] transition-all duration-200 ${i === 0 ? 'border-t' : ''} ${isOpen ? 'border-l-2 border-l-[#3B82F6] pl-4' : ''}`}
+            className={`border-b border-[var(--color-border)] transition-all duration-200 ${i === 0 ? 'border-t' : ''} ${isOpen ? 'border-l-2 border-l-[var(--color-accent)] pl-4' : ''}`}
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
               className="flex items-center justify-between gap-4 w-full py-5 cursor-pointer text-left"
               aria-expanded={isOpen}
             >
-              <dt className="text-base font-semibold text-[#F9FAFB]">{item.q}</dt>
+              <dt className="text-base font-semibold text-[var(--color-text-primary)]">{item.q}</dt>
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-[#3B82F6] text-xl font-light flex-shrink-0"
+                className="text-[var(--color-accent)] text-xl font-light flex-shrink-0"
                 aria-hidden="true"
               >
                 +
@@ -49,7 +49,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
                   className="overflow-hidden"
                 >
-                  <dd className="pb-5 text-[#9CA3AF] text-sm leading-relaxed">{item.a}</dd>
+                  <dd className="pb-5 text-[var(--color-text-muted)] text-sm leading-relaxed">{item.a}</dd>
                 </motion.div>
               )}
             </AnimatePresence>

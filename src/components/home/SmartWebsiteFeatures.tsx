@@ -35,17 +35,17 @@ const features = [
 
 export default function SmartWebsiteFeatures() {
   return (
-    <section className="bg-[#111111] border-t border-[#1F2937] py-20 sm:py-28">
+    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-6 block">
+          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
             [WHAT IS A SMART WEBSITE?]
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#F9FAFB] mb-4 mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
             More Than Just a Pretty Page
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
             A Smart Website works around the clock, capturing leads, answering questions, and booking jobs while you focus on what you do best.
           </p>
         </div>
@@ -57,13 +57,13 @@ export default function SmartWebsiteFeatures() {
             return (
               <div
                 key={feature.title}
-                className="group rounded-xl border border-[#1F2937] bg-[#0A0A0A] p-6 hover:border-[#3B82F6] transition-all duration-300"
+                className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 hover:border-[var(--color-accent)] transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#3B82F6]/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#3B82F6]" />
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
                 </div>
-                <h3 className="text-[#F9FAFB] font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-[#9CA3AF] text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2">{feature.title}</h3>
+                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{feature.description}</p>
               </div>
             );
           })}
