@@ -55,3 +55,26 @@ Master index of all development tasks. Append-only — never overwrite existing 
 ### Deferred / follow-up
 - ESLint binary broken (`Cannot find module '../package.json'`) — pre-existing, `npm install` should fix it
 ---
+
+## 2026-04-18 — Contact page form redesign
+**Status:** complete
+**Folder:** docs/superpowers/specs/2026-04-18-contact-page-form-redesign-design.md, docs/superpowers/plans/2026-04-18-contact-page-form-redesign.md
+**Files changed:** `src/components/contact/ContactForm.tsx` (new), `src/app/contact/page.tsx`, `src/lib/constants.tsx`, `next.config.ts`, `package.json`, `package-lock.json`, `.env.local`
+**Build passed:** yes
+**UI test result:** pending
+### Completed
+- Removed GHL iframe form (`brand.webl4b.com/widget/form/TXCbBbnT8IHqUOPiJaHv`) and `form_embed.js` script from contact page
+- Removed calendar booking section (`#ghl-calendar-embed` placeholder, "Book a Free Strategy Call" card)
+- Created custom `ContactForm` client component with React Hook Form + Zod validation (first name, last name, AU phone, email, optional message)
+- Form POSTs to GHL webhook via `NEXT_PUBLIC_GHL_WEBHOOK_URL` env var
+- Added 3 new info cards to left column: Quick Response, Business Hours, Connect With Us (social links)
+- Updated page metadata and hero copy — "Get in Touch" instead of "Book a Free Strategy Call"
+- Added `services.leadconnectorhq.com` to CSP `connect-src` for webhook POST
+- Form uses design tokens throughout — fully supports light/dark theme switching
+- All accessibility: labels, aria-describedby, aria-live, role="alert", noValidate, focus rings
+- AnimatePresence success transition with cubic-bezier ease arrays
+### Deferred / follow-up
+- UI testing agent should run to validate across breakpoints and themes
+- Social links in "Connect With Us" card currently point to `#` — update when socials are set up
+- GHL CSP entries for `brand.webl4b.com` retained (chatbot widget still uses them)
+---

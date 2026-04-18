@@ -83,6 +83,40 @@ export const SERVICES: Service[] = [
 ];
 
 export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '#book-a-call';
+export const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL ?? '';
+
+export const WAVE_COLORS = {
+  dark: [
+    { offset: 0,   amplitude: 70, frequency: 0.003, color: 'rgba(59,130,246,0.9)',  opacity: 0.40 },
+    { offset: 0.8, amplitude: 55, frequency: 0.004, color: 'rgba(99,102,241,0.85)', opacity: 0.35 },
+    { offset: 1.6, amplitude: 45, frequency: 0.005, color: 'rgba(96,165,250,0.8)',  opacity: 0.30 },
+    { offset: 2.4, amplitude: 35, frequency: 0.003, color: 'rgba(147,197,253,0.6)', opacity: 0.25 },
+    { offset: 3.2, amplitude: 60, frequency: 0.004, color: 'rgba(37,99,235,0.7)',   opacity: 0.38 },
+  ],
+  light: [
+    { offset: 0,   amplitude: 70, frequency: 0.003, color: 'rgba(37,99,235,0.7)',   opacity: 0.35 },
+    { offset: 0.8, amplitude: 55, frequency: 0.004, color: 'rgba(67,56,202,0.65)',  opacity: 0.30 },
+    { offset: 1.6, amplitude: 45, frequency: 0.005, color: 'rgba(29,78,216,0.6)',   opacity: 0.25 },
+    { offset: 2.4, amplitude: 35, frequency: 0.003, color: 'rgba(79,70,229,0.55)',  opacity: 0.20 },
+    { offset: 3.2, amplitude: 60, frequency: 0.004, color: 'rgba(37,99,235,0.65)',  opacity: 0.32 },
+  ],
+  gradients: {
+    dark:  { from: '#0A0A0A', to: '#0D0D16' },
+    light: { from: '#FFFFFF', to: '#EFF6FF' },
+  },
+} as const
+
+export const ANIMATION = {
+  duration: {
+    fast:     0.2,
+    standard: 0.3,
+    slow:     0.6,
+  },
+  ease: {
+    easeOut:   [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    easeInOut: [0.42, 0,    0.58, 1   ] as [number, number, number, number],
+  },
+} as const
 
 export const INDUSTRIES = [
   'Plumbers',

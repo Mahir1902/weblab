@@ -1,23 +1,22 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Script from 'next/script';
-import { SITE_CONFIG, BOOKING_URL } from '@/lib/constants';
+import { SITE_CONFIG } from '@/lib/constants';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact WebLab Sydney — Book a Free Strategy Call',
+  title: 'Contact WebLab Sydney — Get in Touch',
   description:
-    'Get in touch with WebLab Sydney. Book a free 30-minute strategy call or send us a message. We work with tradies and service businesses across Sydney and NSW.',
+    'Get in touch with WebLab Sydney. Send us a message and we\u2019ll get back to you within 24 hours. We work with tradies and service businesses across Sydney and NSW.',
   keywords: [
     'contact WebLab Sydney',
-    'book strategy call Sydney',
+    'get in touch Sydney',
     'software agency contact Sydney',
     'digital agency Sydney quote',
   ],
   openGraph: {
-    title: 'Contact WebLab | Book a Free Strategy Call',
+    title: 'Contact WebLab | Get in Touch',
     description:
-      'Ready to automate your lead flow? Book a free call or drop us a message.',
+      'Ready to automate your lead flow? Send us a message and we\u2019ll be in touch within 24 hours.',
   },
 };
 
@@ -36,7 +35,7 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
-                We&apos;d love to hear about your business. Book a call or send us a message below.
+                Fill out the form below and we&apos;ll get back to you within 24 hours.
               </p>
             </div>
           </AnimatedSection>
@@ -47,12 +46,14 @@ export default function ContactPage() {
       <section className="bg-[var(--color-bg)] pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-            {/* Left: Contact info + calendar */}
+            {/* Left: Contact info + extra cards */}
             <AnimatedSection>
-              <div className="flex flex-col gap-8">
-                {/* Contact details */}
+              <div className="flex flex-col gap-6">
+                {/* Contact Details */}
                 <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8">
-                  <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-6">Contact Details</h2>
+                  <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-6">
+                    Contact Details
+                  </h2>
                   <ul className="flex flex-col gap-5">
                     <li className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
@@ -62,7 +63,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Email</p>
-                        <a href={`mailto:${SITE_CONFIG.email}`} className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors">
+                        <a
+                          href={`mailto:${SITE_CONFIG.email}`}
+                          className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors"
+                        >
                           {SITE_CONFIG.email}
                         </a>
                       </div>
@@ -75,7 +79,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Phone</p>
-                        <a href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`} className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors">
+                        <a
+                          href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`}
+                          className="text-[var(--color-text-secondary)] text-sm hover:text-[var(--color-accent)] transition-colors"
+                        >
                           {SITE_CONFIG.phone}
                         </a>
                       </div>
@@ -89,95 +96,109 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[var(--color-text-dim)] text-xs mb-0.5">Location</p>
-                        <p className="text-[var(--color-text-secondary)] text-sm">{SITE_CONFIG.location}</p>
+                        <p className="text-[var(--color-text-secondary)] text-sm">
+                          {SITE_CONFIG.location}
+                        </p>
                       </div>
                     </li>
                   </ul>
                 </div>
 
-                {/* GHL Calendar Embed */}
-                <div className="rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-dim)] p-6 sm:p-8">
-                  <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">Book a Free Strategy Call</h2>
-                  <p className="text-[var(--color-text-muted)] text-sm mb-6">
-                    Pick a time that works for you. 30 minutes, no pressure, just strategy.
-                  </p>
-
-                  {/*
-                    ============================================================
-                    GHL CALENDAR EMBED — INJECTION POINT
-                    ============================================================
-                    To add the GoHighLevel calendar booking widget:
-                    1. In GHL → Calendars → your calendar → Embed Code
-                    2. Copy the embed script / iframe code
-                    3. Either:
-                       a) Replace the placeholder div below with the embed HTML
-                          (wrap in a client component if using <script> tags)
-                       b) Or use next/script in a separate <GHLScripts /> component
-                    4. The calendar should render inside #ghl-calendar-embed below
-                    ============================================================
-                  */}
-                  <div
-                    id="ghl-calendar-embed"
-                    className="min-h-[200px] rounded-xl border border-dashed border-[var(--color-accent)]/30 flex items-center justify-center"
-                    aria-label="Booking calendar, coming soon"
-                  >
-                    <div className="text-center">
-                      <p className="text-[var(--color-text-dim)] text-sm mb-4">Calendar booking widget loads here</p>
-                      <Link
-                        href={BOOKING_URL}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--color-accent)] text-white text-sm font-semibold hover:bg-[var(--color-accent-hover)] hover:scale-105 transition-all duration-200"
-                      >
-                        Book a Free Call
-                      </Link>
+                {/* Response Time */}
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1">
+                        Quick Response
+                      </h3>
+                      <p className="text-[var(--color-text-muted)] text-sm">
+                        We typically respond within 24 hours.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Business Hours */}
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1">
+                        Business Hours
+                      </h3>
+                      <p className="text-[var(--color-text-muted)] text-sm">
+                        Mon–Fri: 8am–6pm AEST
+                      </p>
+                      <p className="text-[var(--color-text-muted)] text-sm">
+                        Sat–Sun: By appointment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Connect With Us */}
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8">
+                  <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-3">
+                    Connect With Us
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    {/* Instagram */}
+                    <a
+                      href={SITE_CONFIG.socials.instagram ?? '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                      </svg>
+                    </a>
+                    {/* LinkedIn */}
+                    <a
+                      href={SITE_CONFIG.socials.linkedin ?? '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </a>
+                    {/* Facebook */}
+                    <a
+                      href={SITE_CONFIG.socials.facebook ?? '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
 
-            {/* Right: GHL Contact Form */}
+            {/* Right: Contact Form */}
             <AnimatedSection delay={0.1}>
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8 h-full">
-                <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">Send Us a Message</h2>
-                <p className="text-[var(--color-text-muted)] text-sm mb-6">
-                  Prefer to write? Fill out the form and we&apos;ll get back to you within 24 hours.
-                </p>
-
-                <iframe
-                  src="https://brand.webl4b.com/widget/form/TXCbBbnT8IHqUOPiJaHv"
-                  id="inline-TXCbBbnT8IHqUOPiJaHv"
-                  data-layout="{'id':'INLINE'}"
-                  data-trigger-type="alwaysShow"
-                  data-trigger-value=""
-                  data-activation-type="alwaysActivated"
-                  data-activation-value=""
-                  data-deactivation-type="neverDeactivate"
-                  data-deactivation-value=""
-                  data-form-name="WebLab Contact Form"
-                  data-height="815"
-                  data-layout-iframe-id="inline-TXCbBbnT8IHqUOPiJaHv"
-                  data-form-id="TXCbBbnT8IHqUOPiJaHv"
-                  title="WebLab Contact Form"
-                  style={{ width: '100%', height: '815px', border: 'none', borderRadius: '3px' }}
-                />
-
-                {/* Email fallback */}
-                <p className="text-[var(--color-text-dim)] text-xs mt-4 text-center">
-                  Or email us directly at{' '}
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-[var(--color-accent)] hover:underline">
-                    {SITE_CONFIG.email}
-                  </a>
-                </p>
-              </div>
+              <ContactForm />
             </AnimatedSection>
           </div>
         </div>
       </section>
-
-      <Script
-        src="https://brand.webl4b.com/js/form_embed.js"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
