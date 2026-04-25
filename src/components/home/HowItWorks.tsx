@@ -1,6 +1,8 @@
-import Link from 'next/link';
 import { TrendingUp, UserCheck, Cpu, Shield } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import SectionHeader from '@/components/ui/SectionHeader';
+import FeatureCard from '@/components/ui/FeatureCard';
+import CTAButton from '@/components/ui/CTAButton';
 
 const steps = [
   {
@@ -35,19 +37,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-background border-t border-[var(--color-border)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-            [THE WEBLAB FUNNEL]
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-            From Search to Booked Job
-          </h2>
-          <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
-            A proven four-step system that turns strangers into paying customers, automatically.
-          </p>
+        <div className="mb-14">
+          <SectionHeader
+            label="THE WEBLAB FUNNEL"
+            heading="From Search to Booked Job"
+            description="A proven four-step system that turns strangers into paying customers, automatically."
+            centered
+            className="max-w-xl mx-auto"
+          />
         </div>
 
         {/* Steps grid */}
@@ -55,32 +55,22 @@ export default function HowItWorks() {
           {steps.map((step) => {
             const Icon = step.Icon;
             return (
-              <div
+              <FeatureCard
                 key={step.number}
-                className="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-accent)]/40 transition-all duration-300"
-              >
-                {/* Step number watermark */}
-                <div className="absolute top-4 right-4 text-[var(--color-border)] font-bold text-3xl select-none tabular-nums" style={{ fontFamily: 'var(--font-syne)' }} aria-hidden="true">
-                  {step.number}
-                </div>
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
-                </div>
-                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2 pr-6">{step.title}</h3>
-                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{step.description}</p>
-              </div>
+                icon={<Icon className="w-6 h-6 text-[var(--color-accent)]" />}
+                title={step.title}
+                description={step.description}
+                step={step.number}
+              />
             );
           })}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <Link
-            href={BOOKING_URL}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--color-accent)] text-white text-base font-semibold hover:bg-[var(--color-accent-hover)] hover:scale-105 transition-all duration-200"
-          >
+          <CTAButton href={BOOKING_URL}>
             Book a Free Strategy Call
-          </Link>
+          </CTAButton>
         </div>
       </div>
     </section>

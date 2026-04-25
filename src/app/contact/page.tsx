@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-12 bg-[var(--color-bg)]">
+      <section className="pt-32 pb-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -43,7 +43,7 @@ export default function ContactPage() {
       </section>
 
       {/* Split layout */}
-      <section className="bg-[var(--color-bg)] pb-20 sm:pb-28">
+      <section className="bg-background pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left: Contact info + extra cards */}

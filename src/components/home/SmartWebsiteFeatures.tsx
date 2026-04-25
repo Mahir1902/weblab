@@ -1,4 +1,6 @@
 import { Bot, Target, Zap, Search, Smartphone, Mail } from 'lucide-react';
+import SectionHeader from '@/components/ui/SectionHeader';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 const features = [
   {
@@ -38,16 +40,14 @@ export default function SmartWebsiteFeatures() {
     <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-            [WHAT IS A SMART WEBSITE?]
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-            More Than Just a Pretty Page
-          </h2>
-          <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
-            A Smart Website works around the clock, capturing leads, answering questions, and booking jobs while you focus on what you do best.
-          </p>
+        <div className="mb-14">
+          <SectionHeader
+            label="WHAT IS A SMART WEBSITE?"
+            heading="More Than Just a Pretty Page"
+            description="A Smart Website works around the clock, capturing leads, answering questions, and booking jobs while you focus on what you do best."
+            centered
+            className="max-w-2xl mx-auto"
+          />
         </div>
 
         {/* Feature grid */}
@@ -55,16 +55,12 @@ export default function SmartWebsiteFeatures() {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div
+              <FeatureCard
                 key={feature.title}
-                className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 hover:border-[var(--color-accent)] transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
-                </div>
-                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{feature.description}</p>
-              </div>
+                icon={<Icon className="w-6 h-6 text-[var(--color-accent)]" />}
+                title={feature.title}
+                description={feature.description}
+              />
             );
           })}
         </div>

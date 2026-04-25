@@ -58,7 +58,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[var(--color-bg)]">
+      <section className="pt-32 pb-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   The best tradie shouldn&apos;t lose to the best marketer. We&apos;re here to make sure they don&apos;t.
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-sm bg-[var(--color-bg)] border border-[var(--color-accent)] flex items-center justify-center text-xs font-bold text-[var(--color-accent)]">
+                  <div className="w-10 h-10 rounded-sm bg-background border border-[var(--color-accent)] flex items-center justify-center text-xs font-bold text-[var(--color-accent)]">
                     WL
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who we work with */}
-      <section className="bg-[var(--color-bg)] py-20 sm:py-28">
+      <section className="bg-background py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -182,7 +182,7 @@ export default function AboutPage() {
                 const Icon = item.Icon;
                 return (
                   <AnimatedSection key={i} delay={i * 0.07}>
-                    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 flex gap-4">
+                    <div className="rounded-xl border border-[var(--color-border)] bg-background p-6 flex gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center">
                         <Icon className="w-5 h-5 text-[var(--color-accent)]" />
                       </div>

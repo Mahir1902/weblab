@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { BOOKING_URL } from '@/lib/constants';
+import CTAButton from '@/components/ui/CTAButton';
 
 interface BookingCTAProps {
   headline?: string;
@@ -19,12 +19,9 @@ export default function BookingCTA({
         <p className="text-[var(--color-text-muted)] text-lg mb-8 max-w-xl mx-auto">
           {subtext}
         </p>
-        <Link
-          href={BOOKING_URL}
-          className="inline-flex items-center px-8 py-4 rounded-xl bg-[var(--color-accent)] text-white text-base font-semibold hover:bg-[var(--color-accent-hover)] hover:scale-105 transition-all duration-200 glow-blue-sm"
-        >
+        <CTAButton href={BOOKING_URL}>
           Book a Free Strategy Call
-        </Link>
+        </CTAButton>
         <p className="mt-4 text-xs text-[var(--color-text-dim)]">No contracts. No pressure. Just results.</p>
       </div>
     </section>

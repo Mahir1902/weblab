@@ -29,3 +29,11 @@ export interface SiteConfig {
     facebook?: string;
   };
 }
+
+export interface WaveConfig {
+  offset: number;
+  amplitude: number;
+  frequency: number;
+  color: string;
+  opacity: number;
+}

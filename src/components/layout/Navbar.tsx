@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, BOOKING_URL } from '@/lib/constants';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import CTAButton from '@/components/ui/CTAButton';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,8 +38,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border ${
         scrolled
-          ? 'bg-(--color-bg)/90 backdrop-blur-md'
-          : 'bg-(--color-bg)/70 backdrop-blur-sm'
+          ? 'bg-background/90 backdrop-blur-md'
+          : 'bg-background/70 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -75,12 +76,9 @@ export default function Navbar() {
         {/* Desktop CTA + ThemeToggle */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
-          <Link
-            href={BOOKING_URL}
-            className="px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-all duration-200"
-          >
+          <CTAButton href={BOOKING_URL} size="sm">
             Book a Call
-          </Link>
+          </CTAButton>
         </div>
 
         {/* Mobile: ThemeToggle + hamburger */}
@@ -119,7 +117,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.42, 0, 0.58, 1] }}
-            className="md:hidden overflow-hidden bg-(--color-bg)/95 backdrop-blur-md border-b border-border"
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-md border-b border-border"
           >
             <motion.ul
               initial="closed"
@@ -158,12 +156,13 @@ export default function Navbar() {
                 }}
                 className="mt-2"
               >
-                <Link
+                <CTAButton
                   href={BOOKING_URL}
-                  className="block w-full text-center px-5 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent-hover transition-colors"
+                  size="sm"
+                  className="block w-full text-center"
                 >
                   Book a Call
-                </Link>
+                </CTAButton>
               </motion.li>
             </motion.ul>
           </motion.div>

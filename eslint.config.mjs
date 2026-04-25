@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Plugin/skill directories are not project source
+    ".agents/**",
+    ".claude/**",
   ]),
 ]);
 

@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased bg-[var(--color-bg)] text-[var(--color-text-primary)]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased bg-background text-[var(--color-text-primary)]`}
       >
         <ThemeProvider>
           <Navbar />

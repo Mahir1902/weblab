@@ -4,37 +4,18 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { BOOKING_URL, SITE_CONFIG } from '@/lib/constants';
+import { BOOKING_URL, SITE_CONFIG, WAVE_COLORS } from '@/lib/constants';
+import { type WaveConfig } from '@/types';
+import CTAButton from '@/components/ui/CTAButton';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Point = { x: number; y: number };
 
-interface WaveConfig {
-  offset: number;
-  amplitude: number;
-  frequency: number;
-  color: string;
-  opacity: number;
-}
+// ─── Wave palettes — sourced from WAVE_COLORS in constants.ts ─────────────────
 
-// ─── Wave palettes ────────────────────────────────────────────────────────────
-
-const DARK_WAVES: WaveConfig[] = [
-  { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(59,130,246,0.9)',  opacity: 0.40 },
-  { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(99,102,241,0.85)', opacity: 0.32 },
-  { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(96,165,250,0.8)',  opacity: 0.28 },
-  { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(147,197,253,0.6)', opacity: 0.22 },
-  { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(37,99,235,0.7)',   opacity: 0.18 },
-];
-
-const LIGHT_WAVES: WaveConfig[] = [
-  { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(37,99,235,0.7)',   opacity: 0.50 },
-  { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(67,56,202,0.65)',  opacity: 0.42 },
-  { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(29,78,216,0.6)',   opacity: 0.38 },
-  { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(79,70,229,0.55)',  opacity: 0.30 },
-  { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(37,99,235,0.5)',   opacity: 0.24 },
-];
+const DARK_WAVES = WAVE_COLORS.dark;
+const LIGHT_WAVES = WAVE_COLORS.light;
 
 // ─── Framer Motion variants ───────────────────────────────────────────────────
 
@@ -169,13 +150,9 @@ function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
 
       const isDark = isDarkRef.current;
       const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      if (isDark) {
-        grad.addColorStop(0, '#0A0A0A');
-        grad.addColorStop(1, '#0D0D16');
-      } else {
-        grad.addColorStop(0, '#FFFFFF');
-        grad.addColorStop(1, '#EFF6FF');
-      }
+      const gradStops = isDark ? WAVE_COLORS.gradients.dark : WAVE_COLORS.gradients.light;
+      grad.addColorStop(0, gradStops.from);
+      grad.addColorStop(1, gradStops.to);
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -212,7 +189,11 @@ function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
 export default function AnimatedHero() {
   const { resolvedTheme } = useTheme();
   const isDarkRef = useRef(true);
-  isDarkRef.current = resolvedTheme !== 'light';
+
+  // Sync theme into the ref so the canvas RAF loop can read it without re-renders
+  useEffect(() => {
+    isDarkRef.current = resolvedTheme !== 'light';
+  }, [resolvedTheme]);
 
   return (
     <section
@@ -245,7 +226,7 @@ export default function AnimatedHero() {
               i === 0 ? (
                 <span key={i}>
                   {part}
-                  <span className="gradient-text">While You Sleep</span>
+                  <span className="text-[var(--color-accent)] font-extrabold">While You Sleep</span>
                 </span>
               ) : null
             )}
@@ -267,12 +248,7 @@ export default function AnimatedHero() {
 
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-            <Link
-              href={BOOKING_URL}
-              className="px-8 py-4 rounded-xl bg-accent text-white text-base font-semibold hover:bg-accent-hover hover:scale-105 transition-all duration-200 glow-blue-sm"
-            >
-              Book a Free Strategy Call
-            </Link>
+            <CTAButton href={BOOKING_URL}>Book a Free Strategy Call</CTAButton>
             <Link
               href="/services"
               className="px-8 py-4 rounded-xl border border-border text-text-secondary text-base font-medium hover:border-accent/50 hover:text-text-primary transition-all duration-200"

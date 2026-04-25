@@ -1,4 +1,4 @@
-import type { Service, NavLink, SiteConfig } from '@/types';
+import type { Service, NavLink, SiteConfig, WaveConfig } from '@/types';
 import { Globe, Zap, PhoneCall, Star, Bot, Search } from 'lucide-react';
 
 export const SITE_CONFIG: SiteConfig = {
@@ -85,6 +85,12 @@ export const SERVICES: Service[] = [
 export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '#book-a-call';
 export const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL ?? '';
 
+/**
+ * Wave colour palettes for the hero canvas animation.
+ * These colours are rendered directly on an HTML canvas via strokeStyle/fillStyle
+ * and intentionally bypass the design-token system — canvas cannot consume CSS
+ * custom properties, so raw rgba/hex values are used.
+ */
 export const WAVE_COLORS = {
   dark: [
     { offset: 0,   amplitude: 70, frequency: 0.003, color: 'rgba(59,130,246,0.9)',  opacity: 0.40 },
@@ -92,14 +98,14 @@ export const WAVE_COLORS = {
     { offset: 1.6, amplitude: 45, frequency: 0.005, color: 'rgba(96,165,250,0.8)',  opacity: 0.30 },
     { offset: 2.4, amplitude: 35, frequency: 0.003, color: 'rgba(147,197,253,0.6)', opacity: 0.25 },
     { offset: 3.2, amplitude: 60, frequency: 0.004, color: 'rgba(37,99,235,0.7)',   opacity: 0.38 },
-  ],
+  ] satisfies WaveConfig[],
   light: [
     { offset: 0,   amplitude: 70, frequency: 0.003, color: 'rgba(37,99,235,0.7)',   opacity: 0.35 },
     { offset: 0.8, amplitude: 55, frequency: 0.004, color: 'rgba(67,56,202,0.65)',  opacity: 0.30 },
     { offset: 1.6, amplitude: 45, frequency: 0.005, color: 'rgba(29,78,216,0.6)',   opacity: 0.25 },
     { offset: 2.4, amplitude: 35, frequency: 0.003, color: 'rgba(79,70,229,0.55)',  opacity: 0.20 },
     { offset: 3.2, amplitude: 60, frequency: 0.004, color: 'rgba(37,99,235,0.65)',  opacity: 0.32 },
-  ],
+  ] satisfies WaveConfig[],
   gradients: {
     dark:  { from: '#0A0A0A', to: '#0D0D16' },
     light: { from: '#FFFFFF', to: '#EFF6FF' },

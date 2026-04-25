@@ -77,7 +77,7 @@ export default function MobileAppSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Phone frame */}
-              <div className="relative w-64 h-[520px] rounded-[2rem] border-2 border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl overflow-hidden flex flex-col">
+              <div className="relative w-64 h-[540px] rounded-[2rem] border-2 border-[var(--color-border)] bg-background shadow-2xl overflow-hidden flex flex-col">
                 <Image src={mounted && resolvedTheme === 'light' ? '/mobile-light.PNG' : '/mobile-dark.png'} alt="WebLab CRM mobile app" fill className="object-cover object-top" sizes="256px" />
                 
               </div>

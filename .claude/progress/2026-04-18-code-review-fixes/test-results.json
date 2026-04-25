@@ -1,0 +1,1430 @@
+{
+  "failures": [
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Mobile menu button not found",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Mobile menu button not found",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Mobile menu button not found",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Navbar",
+      "message": "Mobile menu button not found",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Body background unexpected: rgb(255, 255, 255) (expected rgb(10, 10, 10))",
+      "severity": "major"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav element not found",
+      "severity": "critical"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "No H1 found on page",
+      "severity": "major"
+    }
+  ],
+  "warnings": [
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "GHL calendar embed placeholder (#ghl-calendar-embed) not found",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "GHL calendar embed placeholder (#ghl-calendar-embed) not found",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check AutomationsSection: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"AutomationsSection\"], section:has(h2:text-matches(\"Automations|automation\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check HowItWorks: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"HowItWorks\"], section:has(h2:text-matches(\"How It Works\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Colors",
+      "message": "Could not check ProblemSolution: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': '[class*=\"ProblemSolution\"], section:has(h2:text-matches(\"Problem|Solution\", \"i\"))' is not a valid selector.\n    at eval (eval at evaluate (:302:30), <anonymous>:2:29)\n    at UtilityScript.evaluate (<anonymous>:304:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No h1 found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "No bracket-style [LABEL] section headers found",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "CTAs",
+      "message": "No booking links found on page",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "ChatbotPlaceholder not found (may be hidden)",
+      "severity": "warning"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "GHL calendar embed placeholder (#ghl-calendar-embed) not found",
+      "severity": "warning"
+    }
+  ],
+  "passing": [
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "375",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "Service-related elements found: 2",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "375",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "375",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Components",
+      "message": "Contact form present",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "375",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "768",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "Service-related elements found: 2",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "768",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "768",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Components",
+      "message": "Contact form present",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "768",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "home",
+      "breakpoint": "1440",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "Service-related elements found: 2",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "services",
+      "breakpoint": "1440",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "about",
+      "breakpoint": "1440",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Layout",
+      "message": "No horizontal scroll",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Typography",
+      "message": "Body font OK: Geist, \"Geist Fallback\"",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Navbar",
+      "message": "Nav background: null",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Accessibility",
+      "message": "All images have alt text",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Components",
+      "message": "Contact form present",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "message": "No console errors",
+      "severity": "pass"
+    },
+    {
+      "page": "contact",
+      "breakpoint": "1440",
+      "category": "CSP",
+      "message": "No CSP violations",
+      "severity": "pass"
+    }
+  ],
+  "screenshots": [
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/home-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/services-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/about-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/contact-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/home-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/services-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/about-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/contact-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/home-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/services-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/about-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/contact-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-18-code-review-fixes/screenshots/home-1440-scrolled.png"
+  ]
+}

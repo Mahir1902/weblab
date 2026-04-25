@@ -1,13 +1,15 @@
 ---
-name: GHL form embed uses different ID than documented placeholder
-description: The contact page live GHL iframe uses id="inline-TXCbBbnT8IHqUOPiJaHv" not the documented #ghl-form-embed placeholder ID
+name: GHL form and calendar embeds replaced with custom React Hook Form
+description: As of commit 3f46ac2 (2026-04-18), contact page uses a custom form — no GHL iframe or placeholder IDs exist
 type: project
 ---
 
-`src/app/contact/page.tsx` replaced the `#ghl-form-embed` placeholder div (documented in CLAUDE.md checklist) with a live GHL `<iframe>` using `id="inline-TXCbBbnT8IHqUOPiJaHv"`. This happened in the 2026-03-17 GHL embed task.
+Commit `3f46ac2`: `feat(contact): replace GHL iframe with custom React Hook Form + Zod contact form`
 
-The CLAUDE.md checklist states: "GHL form embed placeholder (#ghl-form-embed) present on /contact" — this check will always fail because the live iframe has a different ID.
+The contact page (`src/app/contact/page.tsx`) now has a native `<form>` with fields: `firstName`, `lastName`, `phone`, `email`, `message` + submit button. The form submits to `GHL_WEBHOOK_URL` (env var `NEXT_PUBLIC_GHL_WEBHOOK_URL`).
 
-**Why:** GHL's embed script generates a specific `id` matching the form ID. The original placeholder div has been fully replaced.
+There is no longer a `#ghl-form-embed`, `#ghl-calendar-embed`, or any GHL iframe on the contact page.
 
-**How to apply:** When running the standard CLAUDE.md checklist, mark `#ghl-form-embed` check as N/A (replaced by live embed) and instead verify `#inline-TXCbBbnT8IHqUOPiJaHv` iframe exists. Also note: the GHL iframe 403s in headless test browsers due to `X-Frame-Options: sameorigin` on `brand.webl4b.com` — this is expected in CI/test environments and not a bug.
+**Why:** Custom React Hook Form + Zod was built to avoid GHL iframe CSP/X-Frame-Options issues and give more control over styling and validation. Prior to this commit, a live GHL iframe with `id="inline-TXCbBbnT8IHqUOPiJaHv"` was used.
+
+**How to apply:** When testing the contact page, do NOT look for `#ghl-form-embed`, `#ghl-calendar-embed`, or any GHL iframe — they are gone. Look for a native `<form>` with fields: firstName, lastName, phone, email, message. The CLAUDE.md checklist items for GHL placeholders are now stale and should be treated as N/A.

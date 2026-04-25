@@ -30,7 +30,11 @@
       "Bash(node:*)",
       "Bash(xargs kill:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(npm run:*)",
+      "Bash(grep -v \"^$\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -sL -o /dev/null -w \"%{http_code}\" http://localhost:3000/)"
     ]
   }
 }

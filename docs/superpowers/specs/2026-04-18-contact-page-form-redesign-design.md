@@ -148,3 +148,4 @@ export const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL ?? '';
 - `src/lib/constants.tsx` — add `GHL_WEBHOOK_URL` export
 - `.env.local` — add `NEXT_PUBLIC_GHL_WEBHOOK_URL`
 - `package.json` — add `react-hook-form`, `zod`, `@hookform/resolvers`
+~

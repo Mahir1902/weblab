@@ -68,13 +68,13 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--rt-bg);
-  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body {
   background: var(--rt-bg);
   color: var(--rt-text-primary);
-  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,6 +105,7 @@ body {
 /* Heading font — Syne */
 h1, h2, h3 {
   font-family: var(--font-syne), system-ui, sans-serif;
+  text-wrap: balance;
 }
 
 /* Section divider */
@@ -123,14 +124,6 @@ h1, h2, h3 {
 }
 .marquee-track:hover {
   animation-play-state: paused;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #93C5FD 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Subtle glow — CTA only */
@@ -153,4 +146,26 @@ h1, h2, h3 {
     transparent 6px,
     transparent 12px
   );
+}
+
+/* Semantic typography utilities */
+.section-label {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.section-heading {
+  font-family: var(--font-syne);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.section-body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
 }

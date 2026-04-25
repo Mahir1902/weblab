@@ -48,7 +48,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[var(--color-bg)]">
+      <section className="pt-32 pb-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
@@ -66,7 +66,7 @@ export default function ServicesPage() {
       </section>
 
       {/* All 6 service cards */}
-      <section className="bg-[var(--color-bg)] pb-20 sm:pb-28">
+      <section className="bg-background pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,3 +1,5 @@
+import SectionHeader from '@/components/ui/SectionHeader';
+
 const painPoints = [
   'Missed calls turn into lost jobs, especially when you\'re on site',
   'Your website looks outdated and doesn\'t convert visitors into enquiries',
@@ -24,19 +26,17 @@ const stats = [
 
 export default function ProblemSolution() {
   return (
-    <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-background border-t border-[var(--color-border)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-            [THE PROBLEM]
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
-            Sound Familiar?
-          </h2>
-          <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
-            Most tradies and service businesses face the same problems. We fix all of them.
-          </p>
+        <div className="mb-14">
+          <SectionHeader
+            label="THE PROBLEM"
+            heading="Sound Familiar?"
+            description="Most tradies and service businesses face the same problems. We fix all of them."
+            centered
+            className="max-w-xl mx-auto"
+          />
         </div>
 
         {/* Two-column grid */}
