@@ -12,7 +12,23 @@ export interface Service {
 export interface NavLink {
   label: string;
   href: string;
+  children?: NavLink[];
 }
+
+export interface ServiceFeature {
+  title: string;
+  description: string;
+}
+
+export interface ServicePageData {
+  longDescription: string;
+  features: ServiceFeature[];
+  faqs: { q: string; a: string }[];
+  ctaHeadline: string;
+  ctaSubtext: string;
+}
+
+export type Feature = Service;
 
 export interface SiteConfig {
   name: string;

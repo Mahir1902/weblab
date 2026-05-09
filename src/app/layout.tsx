@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Syne } from 'next/font/google';
+import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const syne = Syne({
-  variable: '--font-syne',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['700', '800'],
+  weight: ['500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased bg-[var(--color-bg)] text-[var(--color-text-primary)]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[var(--color-background)] text-[var(--color-text-primary)]`}
       >
         <ThemeProvider>
           <Navbar />

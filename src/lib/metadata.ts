@@ -26,7 +26,7 @@ export function createMetadata({
       ...keywords,
       'WebLab Sydney',
       'software agency Sydney',
-      'digital agency tradies',
+      'digital agency service businesses',
     ],
     authors: [{ name: SITE_CONFIG.name }],
     creator: SITE_CONFIG.name,

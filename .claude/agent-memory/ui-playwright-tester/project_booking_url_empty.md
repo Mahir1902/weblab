@@ -1,15 +1,15 @@
 ---
-name: BOOKING_URL resolves to empty string instead of #book-a-call fallback
-description: All booking CTAs link to empty string href because NEXT_PUBLIC_BOOKING_URL is set to "" in env rather than being undefined
+name: BOOKING_URL now hardcoded to /contact as fallback
+description: All booking CTAs resolved to /contact after 2026-05-09 fix; BOOKING_URL fallback changed from #book-a-call to /contact
 type: project
 ---
 
-`src/lib/constants.ts` line 84: `export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '#book-a-call';`
+`src/lib/constants.tsx` (as of 2026-05-09): `export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '/contact';`
 
-The `??` operator only falls back on `null` or `undefined`. If `.env.local` contains `NEXT_PUBLIC_BOOKING_URL=""`, the fallback is bypassed and an empty string is used as the href.
+The fallback was changed from `'#book-a-call'` to `'/contact'`. All booking CTA links across the site (Navbar desktop, Navbar mobile, Hero, HowItWorks, BookingCTA component, Footer) now route to `/contact` when `NEXT_PUBLIC_BOOKING_URL` is not set.
 
-Observed: all "Book a Call" / "Book a Free Strategy Call" links have `href=""`, navigating to the current page. Only the contact page calendar-embed fallback (which uses `BOOKING_URL` inside the placeholder div) shows `href="#book-a-call"` — but this is only because it also went through the same `BOOKING_URL` constant.
+Verified via Playwright on 2026-05-09: all 7 CTA link surfaces (navbar desktop, navbar mobile, hero, bottom homepage CTA, footer, service slug mid-page, feature slug mid-page) all have `href="/contact"` and clicking them navigates to `/contact`.
 
-**Why:** Likely `NEXT_PUBLIC_BOOKING_URL` was temporarily set to empty string while GHL booking link is being configured.
+**Why:** GHL booking URL was never configured. `/contact` is now the permanent fallback destination to avoid broken anchor links.
 
-**How to apply:** Before any UI test involving booking CTAs, check `process.env.NEXT_PUBLIC_BOOKING_URL` value. If empty string, the issue is env config, not code. Fix: either set a real booking URL or delete the var from `.env.local` to let the `??` fallback kick in.
+**How to apply:** When testing booking CTAs, expect `href="/contact"` — not `href="#book-a-call"` and not an empty string. If NEXT_PUBLIC_BOOKING_URL is set to a real GHL URL in production, that will take precedence.

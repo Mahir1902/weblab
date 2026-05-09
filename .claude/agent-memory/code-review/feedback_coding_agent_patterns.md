@@ -10,7 +10,7 @@ type: feedback
 
 3. **AnimatedSection uses `animate` not `whileInView`** — The component intended for scroll-reveal uses `animate={{ opacity: 1, y: 0 }}` which fires immediately on mount, not on scroll. The correct pattern is `whileInView` with `viewport={{ once: true }}`. This has been a persistent issue.
 
-4. **Footer `#book-a-call` hardcode** — `Footer.tsx` "Book a Free Call" link frequently reverts to a hardcoded `href="#book-a-call"` instead of using the `BOOKING_URL` constant. Always verify all booking CTAs across all components use the constant.
+4. **Footer `#book-a-call` hardcode** — `Footer.tsx` "Book a Free Call" link frequently reverts to a hardcoded `href="#book-a-call"` instead of using the `BOOKING_URL` constant. Always verify all booking CTAs across all components use the constant. NOTE: Fixed in 2026-05-09 session — Footer now correctly uses `BOOKING_URL`.
 
 5. **Missing `color-scheme` CSS property** — When adding dark mode, the coding agent forgets to add `color-scheme: light` to `:root` and `color-scheme: dark` to `.dark`. This causes native form elements and scrollbars to stay in the wrong theme.
 

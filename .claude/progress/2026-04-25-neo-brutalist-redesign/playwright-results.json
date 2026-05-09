@@ -1,0 +1,539 @@
+{
+  "config": {
+    "configFile": "/Users/mahirhaque/Documents/Coding/WebLab website/playwright.config.ts",
+    "rootDir": "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/mahirhaque/Documents/Coding/WebLab website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".claude/progress/2026-04-25-neo-brutalist-redesign/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 5,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "card-inspect.spec.ts",
+      "file": "card-inspect.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Card Border Inspection",
+          "file": "card-inspect.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Homepage — find all bordered/shadowed elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3423,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== BORDERED/SHADOWED ELEMENTS (first 20) ===\n"
+                        },
+                        {
+                          "text": "[0] A.px-6.py-2.5\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(41, 85, 144)\n"
+                        },
+                        {
+                          "text": "[1] SPAN.inline-flex.items-center\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[2] A.px-8.py-4\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(41, 85, 144)\n"
+                        },
+                        {
+                          "text": "[3] A.px-8.py-4\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[4] SECTION.bg-[var(--color-surface)].border-y-2\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgb(245, 240, 235)\n"
+                        },
+                        {
+                          "text": "[5] SPAN.inline-flex.items-center\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[6] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[7] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[8] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[9] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[10] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[11] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[12] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[13] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[14] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[15] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[16] DIV.group.rounded-2xl\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[17] DIV.w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        },
+                        {
+                          "text": "[18] SECTION.bg-[var(--color-background)].border-y-2\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgb(255, 255, 255)\n"
+                        },
+                        {
+                          "text": "[19] SPAN.inline-flex.items-center\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "  background: rgba(41, 85, 144, 0.1)\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-25T10:37:16.919Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ea9e5780908944251c31-eec860c4494b41b32e84",
+              "file": "card-inspect.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Services page — find cards/panels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3347,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== SERVICES PAGE BORDERED ELEMENTS ===\n"
+                        },
+                        {
+                          "text": "[0] SPAN .inline-flex.items-center\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[1] DIV .group.relative\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "[2] DIV .w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[3] DIV .mt-auto.pt-3\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px 0px solid oklab(0.217785 0.00000996143 0.00000435114 / 0.1)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[4] DIV .group.relative\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "[5] DIV .w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[6] DIV .mt-auto.pt-3\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px 0px solid oklab(0.217785 0.00000996143 0.00000435114 / 0.1)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[7] DIV .group.relative\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "[8] DIV .w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[9] DIV .mt-auto.pt-3\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px 0px solid oklab(0.217785 0.00000996143 0.00000435114 / 0.1)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[10] DIV .group.relative\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "[11] DIV .w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[12] DIV .mt-auto.pt-3\n"
+                        },
+                        {
+                          "text": "  border: 2px 0px 0px solid oklab(0.217785 0.00000996143 0.00000435114 / 0.1)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        },
+                        {
+                          "text": "[13] DIV .group.relative\n"
+                        },
+                        {
+                          "text": "  border: 2px solid rgb(26, 26, 26)\n"
+                        },
+                        {
+                          "text": "  box-shadow: rgb(26, 26, 26) 4px 4px 0px 0px\n"
+                        },
+                        {
+                          "text": "[14] DIV .w-14.h-14\n"
+                        },
+                        {
+                          "text": "  border: 2px solid oklab(0.449233 -0.0252703 -0.10564 / 0.2)\n"
+                        },
+                        {
+                          "text": "  box-shadow: none\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-25T10:37:20.642Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ea9e5780908944251c31-b2e1659a27bc95d16a58",
+              "file": "card-inspect.spec.ts",
+              "line": 52,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-25T10:37:16.349Z",
+    "duration": 7687.472999999999,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

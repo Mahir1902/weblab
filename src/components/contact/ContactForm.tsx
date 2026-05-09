@@ -76,21 +76,21 @@ export default function ContactForm() {
     }
   };
 
-  // Shared input classes — design tokens for light/dark support
+  // Shared input classes — neo-brutalist: hard border, white bg, rounded-xl
   const inputClasses =
-    'w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-2)] px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-dim)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-colors';
+    'w-full rounded-xl border-2 border-[var(--color-foreground)] bg-white px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-dim)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-colors';
 
-  const labelClasses = 'block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5';
+  const labelClasses = 'block text-sm font-bold text-[var(--color-text-secondary)] mb-1.5';
 
   const errorClasses = 'text-xs text-[var(--color-danger)] mt-1';
 
   return (
-    <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8 h-full">
-      <h2 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">
-        Send Us a Message
+    <div className="rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-surface)] p-6 sm:p-8 h-full shadow-brutal">
+      <h2 className="text-xl font-black text-[var(--color-text-primary)] mb-2">
+        Shoot Us a Message
       </h2>
       <p className="text-[var(--color-text-muted)] text-sm mb-6">
-        Fill out the form and we&apos;ll get back to you within 24 hours.
+        We read every message. Seriously.
       </p>
 
       <AnimatePresence mode="wait">
@@ -104,7 +104,7 @@ export default function ContactForm() {
             aria-live="polite"
           >
             {/* Green checkmark */}
-            <div className="w-14 h-14 rounded-full bg-[var(--color-success)]/15 flex items-center justify-center mb-4">
+            <div className="w-14 h-14 rounded-full bg-[var(--color-success)]/15 border-2 border-[var(--color-success)] flex items-center justify-center mb-4">
               <svg
                 className="w-7 h-7 text-[var(--color-success)]"
                 fill="none"
@@ -115,11 +115,11 @@ export default function ContactForm() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2">
-              Message Sent!
+            <h3 className="text-lg font-black text-[var(--color-text-primary)] mb-2">
+              Got It!
             </h3>
             <p className="text-[var(--color-text-muted)] text-sm mb-4">
-              Thanks! We&apos;ll be in touch within 24 hours.
+              Thanks! We&apos;ll get back to you super quick.
             </p>
             <p className="text-[var(--color-text-dim)] text-xs">
               Or email us directly at{' '}
@@ -254,7 +254,7 @@ export default function ContactForm() {
             {/* Submission error */}
             {formState === 'error' && submitError && (
               <div
-                className="rounded-lg bg-[var(--color-danger)]/10 border border-[var(--color-danger)]/30 p-3 text-sm text-[var(--color-danger)]"
+                className="rounded-lg bg-[var(--color-danger)]/10 border-2 border-[var(--color-danger)] p-3 text-sm text-[var(--color-danger)]"
                 role="alert"
                 aria-live="polite"
               >
@@ -262,12 +262,12 @@ export default function ContactForm() {
               </div>
             )}
 
-            {/* Submit button */}
+            {/* Submit button — neo-brutalist style */}
             <button
               type="submit"
               disabled={formState === 'submitting'}
               aria-disabled={formState === 'submitting'}
-              className="w-full rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-accent-hover)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-black uppercase tracking-wider text-white border-2 border-[var(--color-foreground)] shadow-brutal hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-brutal"
             >
               {formState === 'submitting' ? (
                 <span className="inline-flex items-center gap-2">
@@ -296,7 +296,7 @@ export default function ContactForm() {
                   Sending...
                 </span>
               ) : (
-                'Send Message'
+                'Send It'
               )}
             </button>
 

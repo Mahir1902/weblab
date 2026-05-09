@@ -35,18 +35,18 @@ const features = [
 
 export default function SmartWebsiteFeatures() {
   return (
-    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-[var(--color-background)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-            [WHAT IS A SMART WEBSITE?]
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+            YOUR WEBSITE, BUT SMARTER
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-            More Than Just a Pretty Page
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+            Not Just a Website. A Lead Machine.
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
-            A Smart Website works around the clock, capturing leads, answering questions, and booking jobs while you focus on what you do best.
+            Your site should be your hardest-working employee. Ours capture leads, answer questions, and book appointments while you&apos;re busy with clients.
           </p>
         </div>
 
@@ -57,12 +57,12 @@ export default function SmartWebsiteFeatures() {
             return (
               <div
                 key={feature.title}
-                className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 hover:border-[var(--color-accent)] transition-all duration-300"
+                className="group rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-background)] p-6 shadow-brutal hover:-translate-y-0.5 hover:shadow-brutal-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-[var(--color-accent)]" />
                 </div>
-                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2">{feature.title}</h3>
+                <h3 className="text-[var(--color-text-primary)] font-black text-lg mb-2">{feature.title}</h3>
                 <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{feature.description}</p>
               </div>
             );

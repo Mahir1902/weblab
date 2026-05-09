@@ -1,75 +1,86 @@
-import { Users, TrendingUp, Send, Bot, Heart } from 'lucide-react';
+import { PhoneOff, Inbox, CalendarCheck, Star, Bot, MessageSquare } from 'lucide-react';
 
-const automations = [
+const crmFeatures = [
   {
-    icon: Users,
-    title: 'Follow Up With Every Lead',
-    description: 'Nobody falls through the cracks. Every new enquiry triggers an instant, personalised follow-up sequence automatically.',
-    step: '01',
+    icon: PhoneOff,
+    title: 'Missed-Call Text Back',
+    description:
+      'Miss a call while you\'re busy? The system instantly texts them back so they don\'t call someone else.',
+    tag: 'NEVER LOSE A LEAD',
   },
   {
-    icon: TrendingUp,
-    title: 'Lead Scoring & Prioritisation',
-    description: 'AI ranks your hottest prospects so you know exactly who to call first, no more guessing.',
-    step: '02',
+    icon: Inbox,
+    title: 'Unified Inbox',
+    description:
+      'See all your texts, emails, Facebook messages, and web chats in one single feed. No more app-switching.',
+    tag: 'EVERYTHING IN ONE PLACE',
   },
   {
-    icon: Send,
-    title: 'Sales Follow-Up Sequences',
-    description: 'Multi-step email and SMS cadences that run on autopilot, moving leads through your pipeline without you.',
-    step: '03',
+    icon: CalendarCheck,
+    title: 'Automated Booking',
+    description:
+      'Let customers book directly on your site, syncing with your calendar. No back-and-forth texts needed.',
+    tag: 'BOOK ON AUTOPILOT',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Automated Follow-Up',
+    description:
+      'Every new enquiry triggers instant, personalised SMS and email sequences. Leads stay warm while you work.',
+    tag: 'NO LEAD GOES COLD',
   },
   {
     icon: Bot,
-    title: 'Instant Customer Support',
-    description: 'AI chatbot answers FAQs, qualifies leads, and books appointments 24/7, even while you sleep.',
-    step: '04',
+    title: 'AI Chatbot',
+    description:
+      'A 24/7 assistant on your website that answers questions, qualifies leads, and books appointments — even at 2am.',
+    tag: '24/7 LEAD CAPTURE',
   },
   {
-    icon: Heart,
-    title: 'Personalised Nurturing',
-    description: 'Each lead gets relevant messages based on their behaviour and interests, building trust automatically.',
-    step: '05',
+    icon: Star,
+    title: 'Review Automation',
+    description:
+      'Automatically request Google reviews from happy customers after every appointment. Build your reputation on autopilot.',
+    tag: 'MORE 5-STAR REVIEWS',
   },
 ];
 
 export default function AutomationsSection() {
   return (
-    <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-[var(--color-surface)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-            [AI AUTOMATIONS]
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+            THE WEBLAB CRM
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-            Your Sales Team, Running 24/7
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+            Ditch the 5 Apps. Use One.
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
-            Set it once and watch it work. Our AI automations handle follow-up, lead nurturing, and customer support, so you focus on delivering the work.
+            Everything you need to turn clicks into paying, happy customers — in one platform you can run from your phone.
           </p>
         </div>
 
-        {/* Staggered cards */}
+        {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {automations.map((auto, index) => {
-            const Icon = auto.icon;
+          {crmFeatures.map((feature) => {
+            const Icon = feature.icon;
             return (
               <div
-                key={auto.step}
-                className={`relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-accent)]/40 transition-all duration-300 ${
-                  index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                key={feature.title}
+                className="rounded-2xl border-2 border-[var(--color-foreground)] bg-white p-6 shadow-brutal hover:-translate-y-0.5 hover:shadow-brutal-lg transition-all duration-300 flex flex-col"
               >
-                {/* Step number */}
-                <div className="absolute top-4 right-4 text-[var(--color-border)] font-bold text-3xl select-none tabular-nums" style={{ fontFamily: 'var(--font-syne)' }} aria-hidden="true">
-                  {auto.step}
+                <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-[var(--color-accent)]" />
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-dim)] flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
+                <h3 className="text-[var(--color-text-primary)] font-black text-lg mb-2">{feature.title}</h3>
+                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed flex-1">{feature.description}</p>
+                <div className="mt-4 pt-3 border-t-2 border-[var(--color-foreground)]/10">
+                  <span className="font-mono text-[10px] font-black text-[var(--color-accent)] tracking-widest uppercase">
+                    {feature.tag}
+                  </span>
                 </div>
-                <h3 className="text-[var(--color-text-primary)] font-semibold text-lg mb-2 pr-8">{auto.title}</h3>
-                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{auto.description}</p>
               </div>
             );
           })}

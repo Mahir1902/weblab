@@ -1,9 +1,5 @@
-'use client';
-
 import { Bell, MessageSquare, LayoutDashboard, Calendar, Star, Smartphone } from 'lucide-react';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 const appFeatures = [
   {
@@ -33,40 +29,30 @@ const appFeatures = [
 ];
 
 export default function MobileAppSection() {
-
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 0);
-    return () => clearTimeout(t);
-  }, []);
-
-  
   return (
-    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-[var(--color-background)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div>
-            <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-              [MANAGE EVERYTHING FROM YOUR PHONE]
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+              YOUR BUSINESS, IN YOUR POCKET
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-              Your Business in Your Pocket
+            <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+              Run Everything From Your Phone
             </h2>
             <p className="text-[var(--color-text-muted)] text-lg leading-relaxed mb-8">
-              The LeadConnector mobile app puts your entire CRM, inbox, and lead pipeline right in your hand, so you never miss an opportunity, even on the job.
+              Check leads, reply to enquiries, and manage your pipeline from anywhere. The CRM app that actually fits in your pocket.
             </p>
             <ul className="flex flex-col gap-4">
               {appFeatures.map((feature) => {
                 const Icon = feature.icon;
                 return (
                   <li key={feature.text} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[var(--color-accent-dim)] flex items-center justify-center mt-0.5">
-                      <Icon className="w-4 h-4 text-[var(--color-accent)]" />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5">
+                      <Icon className="w-5 h-5 text-[var(--color-accent)]" />
                     </div>
-                    <span className="text-[var(--color-text-secondary)] text-sm leading-relaxed">{feature.text}</span>
+                    <span className="text-[var(--color-text-secondary)] text-sm leading-relaxed font-bold mt-2">{feature.text}</span>
                   </li>
                 );
               })}
@@ -76,10 +62,9 @@ export default function MobileAppSection() {
           {/* Right: Phone mockup */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Phone frame */}
-              <div className="relative w-64 h-[520px] rounded-[2rem] border-2 border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl overflow-hidden flex flex-col">
-                <Image src={mounted && resolvedTheme === 'light' ? '/mobile-light.PNG' : '/mobile-dark.png'} alt="WebLab CRM mobile app" fill className="object-cover object-top" sizes="256px" />
-                
+              <div className="absolute inset-0 bg-[var(--color-accent)]/20 rounded-[2.5rem] -rotate-6 scale-105 -z-10 border-2 border-[var(--color-foreground)]"></div>
+              <div className="relative w-64 h-[520px] rounded-[2rem] border-4 border-[var(--color-foreground)] bg-white shadow-brutal-lg overflow-hidden flex flex-col">
+                <Image src="/mobile-light.PNG" alt="WebLab CRM mobile app" fill className="object-cover object-top" sizes="256px" />
               </div>
             </div>
           </div>

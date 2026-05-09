@@ -22,18 +22,18 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         return (
           <div
             key={i}
-            className={`border-b border-[var(--color-border)] transition-all duration-200 ${i === 0 ? 'border-t' : ''} ${isOpen ? 'border-l-2 border-l-[var(--color-accent)] pl-4' : ''}`}
+            className={`border-b-2 border-[var(--color-foreground)] transition-all duration-200 ${i === 0 ? 'border-t-2' : ''} ${isOpen ? 'bg-[var(--color-accent-dim)] border-l-2 border-l-[var(--color-accent)] pl-4' : ''}`}
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
               className="flex items-center justify-between gap-4 w-full py-5 cursor-pointer text-left"
               aria-expanded={isOpen}
             >
-              <dt className="text-base font-semibold text-[var(--color-text-primary)]">{item.q}</dt>
+              <dt className="text-base font-black text-[var(--color-text-primary)]">{item.q}</dt>
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-[var(--color-accent)] text-xl font-light flex-shrink-0"
+                className="text-[var(--color-accent)] text-2xl font-black flex-shrink-0"
                 aria-hidden="true"
               >
                 +
