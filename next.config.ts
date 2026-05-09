@@ -15,11 +15,11 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       // Allow GHL scripts and iframes
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://beta.leadconnectorhq.com https://brand.webl4b.com",
-      "frame-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://beta.leadconnectorhq.com https://link.msgsndr.com https://brand.webl4b.com",
-      "connect-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://brand.webl4b.com https://services.leadconnectorhq.com https://beta.leadconnectorhq.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gohighlevel.com https://*.msgsndr.com https://*.leadconnectorhq.com https://cdn.socket.io https://brand.webl4b.com",
+      "frame-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://*.leadconnectorhq.com https://link.msgsndr.com https://brand.webl4b.com",
+      "connect-src 'self' https://*.gohighlevel.com wss://*.gohighlevel.com https://*.msgsndr.com wss://*.msgsndr.com https://*.leadconnectorhq.com wss://*.leadconnectorhq.com https://cdn.socket.io wss://cdn.socket.io https://brand.webl4b.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.leadconnectorhq.com",
+      "font-src 'self' https://fonts.gstatic.com https://*.leadconnectorhq.com",
       "img-src 'self' data: blob: https:",
       "media-src 'none'",
       "object-src 'none'",
