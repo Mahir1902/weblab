@@ -15,9 +15,9 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       // Allow GHL scripts and iframes
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://brand.webl4b.com",
-      "frame-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://link.msgsndr.com https://brand.webl4b.com",
-      "connect-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://brand.webl4b.com https://services.leadconnectorhq.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://beta.leadconnectorhq.com https://brand.webl4b.com",
+      "frame-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://widgets.leadconnectorhq.com https://beta.leadconnectorhq.com https://link.msgsndr.com https://brand.webl4b.com",
+      "connect-src 'self' https://*.gohighlevel.com https://*.msgsndr.com https://brand.webl4b.com https://services.leadconnectorhq.com https://beta.leadconnectorhq.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
