@@ -4,6 +4,42 @@ Master index of all development tasks. Append-only — never overwrite existing 
 
 ---
 
+## 2026-05-09 — Booking URL Fix + Remove "The Result" Section
+**Status:** complete
+**Folder:** .claude/progress/2026-05-09-booking-url-fix-remove-result/
+**Files changed:** `.env.local`, `src/lib/constants.tsx`, `src/lib/constants.ts` (deleted), `src/components/layout/Footer.tsx`, `src/app/services/[slug]/page.tsx`, `src/app/features/[slug]/page.tsx`
+**Build passed:** yes
+**UI test result:** not run (no visual regression expected for URL change + section removal)
+### Completed
+- Updated `NEXT_PUBLIC_BOOKING_URL` in `.env.local` from `#book-a-call` to `/contact`
+- Updated `BOOKING_URL` fallback in `constants.tsx` from `'#book-a-call'` to `'/contact'`
+- Fixed hardcoded `href="#book-a-call"` in `Footer.tsx` to use `BOOKING_URL` constant
+- Removed "The Result" outcome callout section from `services/[slug]/page.tsx`
+- Removed "The Result" outcome callout section from `features/[slug]/page.tsx`
+- Deleted `constants.ts` stub (pre-existing build-blocker: `.ts` shadowed `.tsx` in bundler module resolution, breaking FEATURES/ANIMATION/etc. imports)
+### Deferred / follow-up
+- `npm run lint` via `.bin/eslint` symlink is broken (pre-existing node_modules issue). Lint verified clean via direct `node_modules/eslint/bin/eslint.js`. A `npm ci` would repair the symlink.
+---
+
+## 2026-04-27 — About Page Rebuild
+**Status:** complete
+**Folder:** .claude/progress/2026-04-27-about-page-rebuild/
+**Files changed:** src/app/about/page.tsx (full rewrite), public/images/tradie_illustration.png (new)
+**Build passed:** yes
+**UI test result:** apostrophe rendering fixed, sections merged per user feedback
+### Completed
+- Removed "Who We Work With" and "Why WebLab" sections
+- Merged Hero + Our Story into two-column section (text left, illustration right)
+- Added "How We Work" 4-step process cards
+- Added FAQ with 6 items + FAQPage JSON-LD structured data
+- Updated SEO metadata and OpenGraph
+- Fixed inline gradient, Tailwind v4 border opacity, transition-all, apostrophe rendering
+### Deferred / follow-up
+- FaqAccordion missing aria-controls/role="region" (pre-existing)
+- --color-text-dim fails WCAG AA on surface backgrounds (pre-existing)
+
+---
+
 ## 2026-03-17 — Embed GHL contact form on contact page
 **Status:** complete
 **Folder:** .claude/progress/ (plan provided by user directly)

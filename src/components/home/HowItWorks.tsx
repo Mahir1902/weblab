@@ -1,76 +1,83 @@
-import { TrendingUp, UserCheck, Cpu, Shield } from 'lucide-react';
+import Link from 'next/link';
+import { Phone, Wrench, Rocket } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
-import SectionHeader from '@/components/ui/SectionHeader';
-import FeatureCard from '@/components/ui/FeatureCard';
-import CTAButton from '@/components/ui/CTAButton';
 
 const steps = [
   {
     number: '01',
-    title: 'Drive Organic Traffic',
+    title: 'Book a Call',
     description:
-      'Strategic keywords and SEO enhancements get your business ranking higher on Google, bringing in locals actively searching for your services.',
-    Icon: TrendingUp,
+      'Tell us about your business and where you want to grow. We\'ll put together a clear plan — no jargon, no pressure.',
+    Icon: Phone,
   },
   {
     number: '02',
-    title: 'Convert Visitors Into Leads',
+    title: 'We Build It',
     description:
-      'Once they arrive, smart lead capture tools, chatbots, forms, and pop-ups, turn anonymous visitors into real prospects with their contact details.',
-    Icon: UserCheck,
+      'We set up your website, CRM, automations, and lead capture tools. You don\'t touch a thing — it\'s fully done-for-you.',
+    Icon: Wrench,
   },
   {
     number: '03',
-    title: 'Automate Your Sales',
+    title: 'Watch Jobs Roll In',
     description:
-      'AI-driven chatbots and personalised automations follow up instantly, nurture prospects, and book jobs, all without you doing a thing.',
-    Icon: Cpu,
-  },
-  {
-    number: '04',
-    title: 'Grow With Confidence',
-    description:
-      'A fast, mobile-responsive, well-designed website that builds trust and keeps working for you 24/7, your best salesperson that never sleeps.',
-    Icon: Shield,
+      'Leads come in, follow-up happens automatically, reviews get collected, and you focus on what you\'re actually good at.',
+    Icon: Rocket,
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="bg-background border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-[var(--color-surface)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-14">
-          <SectionHeader
-            label="THE WEBLAB FUNNEL"
-            heading="From Search to Booked Job"
-            description="A proven four-step system that turns strangers into paying customers, automatically."
-            centered
-            className="max-w-xl mx-auto"
-          />
+        <div className="text-center mb-14">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+            HOW IT WORKS
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+            Three Steps. That&apos;s It.
+          </h2>
+          <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
+            No complicated tech. No hunting for leads. Just a simple system to get more jobs.
+          </p>
         </div>
 
         {/* Steps grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
           {steps.map((step) => {
             const Icon = step.Icon;
             return (
-              <FeatureCard
+              <div
                 key={step.number}
-                icon={<Icon className="w-6 h-6 text-[var(--color-accent)]" />}
-                title={step.title}
-                description={step.description}
-                step={step.number}
-              />
+                className="relative rounded-2xl border-2 border-[var(--color-foreground)] bg-white p-8 shadow-brutal hover:-translate-y-0.5 hover:shadow-brutal-lg transition-all duration-300"
+              >
+                {/* Step number watermark */}
+                <div
+                  className="absolute top-6 right-6 text-[var(--color-foreground)]/10 font-black text-5xl select-none tabular-nums"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                  aria-hidden="true"
+                >
+                  {step.number}
+                </div>
+                <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center mb-5">
+                  <Icon className="w-7 h-7 text-[var(--color-accent)]" />
+                </div>
+                <h3 className="text-[var(--color-text-primary)] font-black text-xl mb-3 pr-8">{step.title}</h3>
+                <p className="text-[var(--color-text-muted)] text-base leading-relaxed">{step.description}</p>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <CTAButton href={BOOKING_URL}>
+          <Link
+            href={BOOKING_URL}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--color-accent)] text-white text-base font-black border-2 border-[var(--color-foreground)] shadow-brutal hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-200"
+          >
             Book a Free Strategy Call
-          </CTAButton>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,0 +1,104 @@
+[
+  {
+    "breakpoint": "375",
+    "width": 375,
+    "industryBarVisible": true,
+    "headingText": "The Natural Habitat for Home Service Businesses",
+    "headingIsAccent": true,
+    "headingColor": "rgb(41, 85, 144)",
+    "industryCount": 7,
+    "industryNames": [
+      "Plumbers",
+      "Electricians",
+      "HVAC",
+      "Landscapers",
+      "Roofing",
+      "Cleaning",
+      "Painters"
+    ],
+    "layoutInfo": {
+      "wrapsOnSmall": true,
+      "yPositions": [
+        1054,
+        1090,
+        1126
+      ]
+    },
+    "heroVisible": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "iconColorOk": true,
+    "bordersVisible": true,
+    "hasHorizScroll": false,
+    "bgColor": "rgb(255, 255, 255)",
+    "surfaceBgColor": "rgb(245, 240, 235)",
+    "screenshotPath": "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-industry-bar-test/screenshots/home-375.png"
+  },
+  {
+    "breakpoint": "768",
+    "width": 768,
+    "industryBarVisible": true,
+    "headingText": "The Natural Habitat for Home Service Businesses",
+    "headingIsAccent": true,
+    "headingColor": "rgb(41, 85, 144)",
+    "industryCount": 7,
+    "industryNames": [
+      "Plumbers",
+      "Electricians",
+      "HVAC",
+      "Landscapers",
+      "Roofing",
+      "Cleaning",
+      "Painters"
+    ],
+    "layoutInfo": {
+      "wrapsOnSmall": true,
+      "yPositions": [
+        1109,
+        1149
+      ]
+    },
+    "heroVisible": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "iconColorOk": true,
+    "bordersVisible": true,
+    "hasHorizScroll": false,
+    "bgColor": "rgb(255, 255, 255)",
+    "surfaceBgColor": "rgb(245, 240, 235)",
+    "screenshotPath": "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-industry-bar-test/screenshots/home-768.png"
+  },
+  {
+    "breakpoint": "1440",
+    "width": 1440,
+    "industryBarVisible": true,
+    "headingText": "The Natural Habitat for Home Service Businesses",
+    "headingIsAccent": true,
+    "headingColor": "rgb(41, 85, 144)",
+    "industryCount": 7,
+    "industryNames": [
+      "Plumbers",
+      "Electricians",
+      "HVAC",
+      "Landscapers",
+      "Roofing",
+      "Cleaning",
+      "Painters"
+    ],
+    "layoutInfo": {
+      "singleRow": true,
+      "yPositions": [
+        985
+      ]
+    },
+    "heroVisible": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "iconColorOk": true,
+    "bordersVisible": true,
+    "hasHorizScroll": false,
+    "bgColor": "rgb(255, 255, 255)",
+    "surfaceBgColor": "rgb(245, 240, 235)",
+    "screenshotPath": "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-industry-bar-test/screenshots/home-1440.png"
+  }
+]

@@ -1,15 +1,15 @@
 ---
-name: GHL form and calendar embeds replaced with custom React Hook Form
-description: As of commit 3f46ac2 (2026-04-18), contact page uses a custom form — no GHL iframe or placeholder IDs exist
+name: Contact page now uses custom React form — no GHL iframe
+description: As of 2026-05-09, contact page uses ContactForm component (React Hook Form + Zod) instead of GHL iframe; chatbot widget id is "chatbot-widget"
 type: project
 ---
 
-Commit `3f46ac2`: `feat(contact): replace GHL iframe with custom React Hook Form + Zod contact form`
+`src/app/contact/page.tsx` was fully rebuilt (commit 3f46ac2) to use a custom `ContactForm` component (React Hook Form + Zod validation) instead of the GHL iframe embed. The GHL calendar and form placeholders (`#ghl-calendar-embed`, `#ghl-form-embed`) are no longer present.
 
-The contact page (`src/app/contact/page.tsx`) now has a native `<form>` with fields: `firstName`, `lastName`, `phone`, `email`, `message` + submit button. The form submits to `GHL_WEBHOOK_URL` (env var `NEXT_PUBLIC_GHL_WEBHOOK_URL`).
+The contact form fields are: First Name, Last Name, Phone, Email, Message (optional). Submit button text is "SEND IT". Form submits to `NEXT_PUBLIC_GHL_WEBHOOK_URL` via fetch.
 
-There is no longer a `#ghl-form-embed`, `#ghl-calendar-embed`, or any GHL iframe on the contact page.
+The `ChatbotPlaceholder` component renders `<div id="chatbot-widget" aria-hidden="true">` — NOT `id="chatbot-placeholder"`. When testing for chatbot presence, query `document.getElementById('chatbot-widget')`.
 
-**Why:** Custom React Hook Form + Zod was built to avoid GHL iframe CSP/X-Frame-Options issues and give more control over styling and validation. Prior to this commit, a live GHL iframe with `id="inline-TXCbBbnT8IHqUOPiJaHv"` was used.
+**Why:** GHL iframe embeds caused CSP violations and X-Frame-Options blocks in headless browsers. The custom form avoids iframe issues and gives full control over styling and validation.
 
-**How to apply:** When testing the contact page, do NOT look for `#ghl-form-embed`, `#ghl-calendar-embed`, or any GHL iframe — they are gone. Look for a native `<form>` with fields: firstName, lastName, phone, email, message. The CLAUDE.md checklist items for GHL placeholders are now stale and should be treated as N/A.
+**How to apply:** CLAUDE.md checklist items for `#ghl-calendar-embed` and `#ghl-form-embed` are now N/A. Instead verify: ContactForm renders, "SEND IT" button present, chatbot-widget div present. Do not expect any GHL iframes on /contact.

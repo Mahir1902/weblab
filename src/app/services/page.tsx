@@ -25,20 +25,20 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Services — Websites, CRM & Automation for Tradies',
+  title: 'Services — Websites, CRM & Automation for Service Businesses',
   description:
     'WebLab offers smart websites, CRM automation, missed call text-back, Google review automation, AI chatbots, and local SEO for Sydney service businesses.',
   keywords: [
     'CRM for service businesses Sydney',
     'automated follow-up system Sydney',
-    'smart website for tradies Sydney',
+    'smart website for service businesses Sydney',
     'missed call text back',
     'Google review automation Sydney',
-    'local SEO tradies Sydney',
+    'local SEO service businesses Sydney',
     'AI chatbot for small business',
   ],
   openGraph: {
-    title: 'Services | WebLab — Built for Tradies & Service Businesses',
+    title: 'Services | WebLab — Built for Service Businesses',
     description:
       'Six purpose-built systems designed to capture more leads, automate follow-up, and grow your service business.',
   },
@@ -48,25 +48,24 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background">
+      <section className="pt-32 pb-16 bg-[var(--color-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <span className="font-mono text-xs text-[var(--color-accent)] tracking-widest uppercase mb-6 block">
-              [WHAT WE BUILD]
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+              WHAT WE BUILD
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-4 mt-2">
-              Systems That Grow Your Business
+            <h1 className="text-4xl sm:text-5xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+              Tools That Actually Bring In Work
             </h1>
             <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
-              Every service we offer is purpose-built for local trade and service businesses in Sydney.
-              No cookie-cutter templates. No generic software. Systems that actually work.
+              Everything we build is designed for one thing: getting you more jobs with less effort. No generic templates. No bloated software.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
       {/* All 6 service cards */}
-      <section className="bg-background pb-20 sm:pb-28">
+      <section className="bg-[var(--color-background)] pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -81,14 +80,14 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ accordion */}
-      <section className="bg-[var(--color-surface)] border-y border-[var(--color-border)] py-24">
+      <section className="bg-[var(--color-surface)] py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-3">
+              <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-3">
                 Common Questions
               </h2>
-              <div className="mx-auto w-12 h-0.5 bg-[var(--color-accent)] rounded-full" aria-hidden="true" />
+              <div className="mx-auto w-12 h-1 bg-[var(--color-accent)] rounded-full" aria-hidden="true" />
             </div>
             <FaqAccordion items={faqs} />
           </AnimatedSection>
@@ -97,7 +96,7 @@ export default function ServicesPage() {
 
       <AnimatedSection>
         <BookingCTA
-          headline="Not Sure Which Service You Need?"
+          headline="Not Sure Where to Start?"
           subtext="Book a free strategy call and we'll tell you exactly what would make the biggest difference for your business."
         />
       </AnimatedSection>

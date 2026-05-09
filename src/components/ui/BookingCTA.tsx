@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import { BOOKING_URL } from '@/lib/constants';
-import CTAButton from '@/components/ui/CTAButton';
 
 interface BookingCTAProps {
   headline?: string;
@@ -11,17 +11,20 @@ export default function BookingCTA({
   subtext = 'Book a free 30-minute strategy call. No pitch, no pressure. Just a clear plan for your business.',
 }: BookingCTAProps) {
   return (
-    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
+    <section className="bg-[var(--color-surface)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 leading-tight">
+        <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 leading-tight">
           {headline}
         </h2>
         <p className="text-[var(--color-text-muted)] text-lg mb-8 max-w-xl mx-auto">
           {subtext}
         </p>
-        <CTAButton href={BOOKING_URL}>
+        <Link
+          href={BOOKING_URL}
+          className="inline-flex items-center px-8 py-4 rounded-xl bg-[var(--color-accent)] text-white text-base font-black border-2 border-[var(--color-foreground)] shadow-brutal hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-200"
+        >
           Book a Free Strategy Call
-        </CTAButton>
+        </Link>
         <p className="mt-4 text-xs text-[var(--color-text-dim)]">No contracts. No pressure. Just results.</p>
       </div>
     </section>

@@ -1,6 +1,4 @@
 import { Bot, Target, Zap, Search, Smartphone, Mail } from 'lucide-react';
-import SectionHeader from '@/components/ui/SectionHeader';
-import FeatureCard from '@/components/ui/FeatureCard';
 
 const features = [
   {
@@ -37,17 +35,19 @@ const features = [
 
 export default function SmartWebsiteFeatures() {
   return (
-    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-20 sm:py-28">
+    <section className="bg-[var(--color-background)] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-14">
-          <SectionHeader
-            label="WHAT IS A SMART WEBSITE?"
-            heading="More Than Just a Pretty Page"
-            description="A Smart Website works around the clock, capturing leads, answering questions, and booking jobs while you focus on what you do best."
-            centered
-            className="max-w-2xl mx-auto"
-          />
+        <div className="text-center mb-14">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest mb-6">
+            YOUR WEBSITE, BUT SMARTER
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--color-text-primary)] mb-4 mt-2">
+            Not Just a Website. A Lead Machine.
+          </h2>
+          <p className="text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">
+            Your site should be your hardest-working employee. Ours capture leads, answer questions, and book appointments while you&apos;re busy with clients.
+          </p>
         </div>
 
         {/* Feature grid */}
@@ -55,12 +55,16 @@ export default function SmartWebsiteFeatures() {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <FeatureCard
+              <div
                 key={feature.title}
-                icon={<Icon className="w-6 h-6 text-[var(--color-accent)]" />}
-                title={feature.title}
-                description={feature.description}
-              />
+                className="group rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-background)] p-6 shadow-brutal hover:-translate-y-0.5 hover:shadow-brutal-lg transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[var(--color-accent)]" />
+                </div>
+                <h3 className="text-[var(--color-text-primary)] font-black text-lg mb-2">{feature.title}</h3>
+                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">{feature.description}</p>
+              </div>
             );
           })}
         </div>

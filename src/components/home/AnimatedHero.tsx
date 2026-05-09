@@ -1,21 +1,31 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import { BOOKING_URL, SITE_CONFIG, WAVE_COLORS } from '@/lib/constants';
-import { type WaveConfig } from '@/types';
-import CTAButton from '@/components/ui/CTAButton';
+import { BOOKING_URL, SITE_CONFIG } from '@/lib/constants';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Point = { x: number; y: number };
 
-// ─── Wave palettes — sourced from WAVE_COLORS in constants.ts ─────────────────
+interface WaveConfig {
+  offset: number;
+  amplitude: number;
+  frequency: number;
+  color: string;
+  opacity: number;
+}
 
-const DARK_WAVES = WAVE_COLORS.dark;
-const LIGHT_WAVES = WAVE_COLORS.light;
+// ─── Wave palette (#295590 family) ──────────────────────────────────────────
+
+const LIGHT_WAVES: WaveConfig[] = [
+  { offset: 0,              amplitude: 70, frequency: 0.003,  color: 'rgba(41,85,144,0.7)',   opacity: 0.50 },
+  { offset: Math.PI / 2,   amplitude: 90, frequency: 0.0026, color: 'rgba(30,63,107,0.65)',  opacity: 0.42 },
+  { offset: Math.PI,        amplitude: 60, frequency: 0.0034, color: 'rgba(58,123,213,0.6)',  opacity: 0.38 },
+  { offset: Math.PI * 1.5, amplitude: 80, frequency: 0.0022, color: 'rgba(107,163,232,0.55)', opacity: 0.30 },
+  { offset: Math.PI * 2,   amplitude: 55, frequency: 0.004,  color: 'rgba(41,85,144,0.5)',   opacity: 0.24 },
+];
 
 // ─── Framer Motion variants ───────────────────────────────────────────────────
 
@@ -31,53 +41,9 @@ const item: Variants = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
 };
 
-// ─── Typewriter ───────────────────────────────────────────────────────────────
-
-const PHRASES = [
-  'plumbers', 'electricians', 'builders', 'landscapers',
-  'HVAC techs', 'painters', 'pool services', 'locksmiths',
-];
-
-function TypewriterText() {
-  const [phraseIdx, setPhraseIdx] = useState(0);
-  const [charIdx, setCharIdx]     = useState(0);
-  const [deleting, setDeleting]   = useState(false);
-
-  useEffect(() => {
-    const current = PHRASES[phraseIdx];
-    if (!deleting && charIdx < current.length) {
-      const t = setTimeout(() => setCharIdx(c => c + 1), 65);
-      return () => clearTimeout(t);
-    }
-    if (!deleting && charIdx === current.length) {
-      const t = setTimeout(() => setDeleting(true), 1800);
-      return () => clearTimeout(t);
-    }
-    if (deleting && charIdx > 0) {
-      const t = setTimeout(() => setCharIdx(c => c - 1), 30);
-      return () => clearTimeout(t);
-    }
-    if (deleting && charIdx === 0) {
-      const t = setTimeout(() => {
-        setDeleting(false);
-        setPhraseIdx(i => (i + 1) % PHRASES.length);
-      }, 0);
-      return () => clearTimeout(t);
-    }
-  }, [charIdx, deleting, phraseIdx]);
-
-  return (
-    <span className="font-mono text-sm text-text-dim">
-      for{' '}
-      <span className="text-text-muted">{PHRASES[phraseIdx].slice(0, charIdx)}</span>
-      <span className="text-accent animate-pulse">|</span>
-    </span>
-  );
-}
-
 // ─── Canvas wave background ───────────────────────────────────────────────────
 
-function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
+function WaveCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const mouseRef  = useRef<Point>({ x: 0, y: 0 });
   const targetRef = useRef<Point>({ x: 0, y: 0 });
@@ -148,19 +114,16 @@ function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
       mouseRef.current.x += (targetRef.current.x - mouseRef.current.x) * smoothing;
       mouseRef.current.y += (targetRef.current.y - mouseRef.current.y) * smoothing;
 
-      const isDark = isDarkRef.current;
       const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      const gradStops = isDark ? WAVE_COLORS.gradients.dark : WAVE_COLORS.gradients.light;
-      grad.addColorStop(0, gradStops.from);
-      grad.addColorStop(1, gradStops.to);
+      grad.addColorStop(0, '#FFFFFF');
+      grad.addColorStop(1, '#E8F0FE');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.globalAlpha = 1;
       ctx.shadowBlur  = 0;
 
-      const palette = isDark ? DARK_WAVES : LIGHT_WAVES;
-      palette.forEach(drawWave);
+      LIGHT_WAVES.forEach(drawWave);
 
       rafId = window.requestAnimationFrame(animate);
     };
@@ -173,7 +136,7 @@ function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
       window.removeEventListener('mouseleave', onMouseLeave);
       cancelAnimationFrame(rafId);
     };
-  }, [isDarkRef]);
+  }, []);
 
   return (
     <canvas
@@ -187,20 +150,12 @@ function WaveCanvas({ isDarkRef }: { isDarkRef: React.RefObject<boolean> }) {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 export default function AnimatedHero() {
-  const { resolvedTheme } = useTheme();
-  const isDarkRef = useRef(true);
-
-  // Sync theme into the ref so the canvas RAF loop can read it without re-renders
-  useEffect(() => {
-    isDarkRef.current = resolvedTheme !== 'light';
-  }, [resolvedTheme]);
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
-      <WaveCanvas isDarkRef={isDarkRef} />
+      <WaveCanvas />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center">
@@ -212,59 +167,58 @@ export default function AnimatedHero() {
         >
           {/* Badge */}
           <motion.div variants={item}>
-            <span className="font-mono text-xs text-accent tracking-widest uppercase">
-              [SYDNEY-BASED SOFTWARE AGENCY]
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 font-mono text-xs font-black text-[var(--color-accent)] uppercase tracking-widest">
+              SYDNEY-BASED SOFTWARE AGENCY
             </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-text-primary leading-tight tracking-tight max-w-4xl"
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-[var(--color-text-primary)] leading-tight tracking-tight max-w-4xl"
           >
             {SITE_CONFIG.tagline.split('While You Sleep').map((part, i) =>
               i === 0 ? (
                 <span key={i}>
                   {part}
-                  <span className="text-[var(--color-accent)] font-extrabold">While You Sleep</span>
+                  <span className="text-[var(--color-accent)]">While You Sleep.</span>
                 </span>
               ) : null
             )}
           </motion.h1>
 
-          {/* Typewriter */}
-          <motion.div variants={item}>
-            <TypewriterText />
-          </motion.div>
-
           {/* Subheadline */}
           <motion.p
             variants={item}
-            className="text-lg sm:text-xl text-text-muted max-w-2xl leading-relaxed font-normal"
+            className="text-lg sm:text-xl text-[var(--color-text-muted)] max-w-2xl leading-relaxed font-medium"
           >
-            We build smart websites, CRM automation, and lead capture systems
-            for Sydney&apos;s local service businesses, so you book more jobs without working more hours.
+            Smart websites, automations, and lead systems that book jobs on autopilot — so you can focus on doing what you&apos;re actually good at.
           </motion.p>
 
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-            <CTAButton href={BOOKING_URL}>Book a Free Strategy Call</CTAButton>
+            <Link
+              href={BOOKING_URL}
+              className="px-8 py-4 rounded-xl bg-[var(--color-accent)] text-white text-base font-black border-2 border-[var(--color-foreground)] shadow-brutal hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-200"
+            >
+              Book a Free Strategy Call
+            </Link>
             <Link
               href="/services"
-              className="px-8 py-4 rounded-xl border border-border text-text-secondary text-base font-medium hover:border-accent/50 hover:text-text-primary transition-all duration-200"
+              className="px-8 py-4 rounded-xl border-2 border-[var(--color-foreground)] bg-white text-[var(--color-text-primary)] text-base font-black shadow-brutal hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all duration-200"
             >
               See What We Build
             </Link>
           </motion.div>
 
-          {/* Social proof micro */}
+          {/* Social proof */}
           <motion.div
             variants={item}
-            className="flex items-center gap-6 mt-4 text-sm text-text-muted"
+            className="flex flex-wrap items-center justify-center gap-6 mt-4 text-sm font-bold text-[var(--color-text-muted)]"
           >
             {['No lock-in contracts', 'Fully done-for-you', 'Sydney local'].map((label) => (
               <span key={label} className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-[var(--color-accent)]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 {label}
@@ -273,6 +227,7 @@ export default function AnimatedHero() {
           </motion.div>
         </motion.div>
       </div>
+
     </section>
   );
 }

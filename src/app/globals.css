@@ -1,62 +1,46 @@
 @import "tailwindcss";
 
-/* Runtime theme variables */
+/* Runtime theme variables — light-only neo-brutalist palette */
 :root {
-  /* Light theme (default) */
   color-scheme: light;
   --rt-bg: #FFFFFF;
-  --rt-surface: #F9FAFB;
-  --rt-surface-2: #F3F4F6;
-  --rt-accent: #2563EB;
-  --rt-accent-hover: #1D4ED8;
-  --rt-accent-dim: rgba(37, 99, 235, 0.10);
-  --rt-text-primary: #111827;
-  --rt-text-secondary: #374151;
-  --rt-text-muted: #6B7280;
-  --rt-text-dim: #9CA3AF;
-  --rt-border: #E5E7EB;
-  --rt-border-subtle: #F3F4F6;
-  --rt-danger: #EF4444;
-  --rt-success: #10B981;
-}
-
-.dark {
-  /* Dark theme */
-  color-scheme: dark;
-  --rt-bg: #0A0A0A;
-  --rt-surface: #111111;
-  --rt-surface-2: #161616;
-  --rt-accent: #3B82F6;
-  --rt-accent-hover: #2563EB;
-  --rt-accent-dim: rgba(59, 130, 246, 0.15);
-  --rt-text-primary: #F9FAFB;
-  --rt-text-secondary: #D1D5DB;
-  --rt-text-muted: #9CA3AF;
-  --rt-text-dim: #6B7280;
-  --rt-border: #1F2937;
-  --rt-border-subtle: #111827;
-  --rt-danger: #EF4444;
-  --rt-success: #10B981;
+  --rt-surface: #F5F0EB;
+  --rt-surface-2: #EDE8E3;
+  --rt-accent: #295590;
+  --rt-accent-hover: #1E3F6B;
+  --rt-accent-dim: rgba(41, 85, 144, 0.10);
+  --rt-accent-surface: rgba(41, 85, 144, 0.07);
+  --rt-text-primary: #1A1A1A;
+  --rt-text-secondary: #2D2D2D;
+  --rt-text-muted: #555555;
+  --rt-text-dim: #888888;
+  --rt-border: #1A1A1A;
+  --rt-border-subtle: #D4CFC9;
+  --rt-danger: #D63031;
+  --rt-success: #00B894;
+  --rt-foreground: #1A1A1A;
 }
 
 @theme inline {
-  --color-background: var(--rt-bg);
-  --color-surface: var(--rt-surface);
-  --color-surface-2: var(--rt-surface-2);
-  --color-accent: var(--rt-accent);
-  --color-accent-hover: var(--rt-accent-hover);
-  --color-accent-dim: var(--rt-accent-dim);
-  --color-text-primary: var(--rt-text-primary);
-  --color-text-secondary: var(--rt-text-secondary);
-  --color-text-muted: var(--rt-text-muted);
-  --color-text-dim: var(--rt-text-dim);
-  --color-border: var(--rt-border);
-  --color-border-subtle: var(--rt-border-subtle);
-  --color-danger: var(--rt-danger);
-  --color-success: var(--rt-success);
+  --color-background: #FFFFFF;
+  --color-surface: #F5F0EB;
+  --color-surface-2: #EDE8E3;
+  --color-accent: #295590;
+  --color-accent-hover: #1E3F6B;
+  --color-accent-dim: rgba(41, 85, 144, 0.10);
+  --color-accent-surface: rgba(41, 85, 144, 0.07);
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #2D2D2D;
+  --color-text-muted: #555555;
+  --color-text-dim: #888888;
+  --color-border: #1A1A1A;
+  --color-border-subtle: #D4CFC9;
+  --color-danger: #D63031;
+  --color-success: #00B894;
+  --color-foreground: #1A1A1A;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-syne: var(--font-syne);
+  --font-heading: var(--font-heading);
 }
 
 *,
@@ -68,13 +52,11 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--rt-bg);
-  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body {
   background: var(--rt-bg);
   color: var(--rt-text-primary);
-  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -89,7 +71,7 @@ body {
   background: var(--rt-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--rt-border);
+  background: var(--rt-border-subtle);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -104,13 +86,12 @@ body {
 
 /* Heading font — Syne */
 h1, h2, h3 {
-  font-family: var(--font-syne), system-ui, sans-serif;
-  text-wrap: balance;
+  font-family: var(--font-heading), system-ui, sans-serif;
 }
 
 /* Section divider */
 .section-divider {
-  border-top: 1px solid var(--rt-border);
+  border-top: 2px solid var(--rt-foreground);
 }
 
 /* CSS Marquee animation */
@@ -126,9 +107,32 @@ h1, h2, h3 {
   animation-play-state: paused;
 }
 
-/* Subtle glow — CTA only */
-.glow-blue-sm {
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #295590 0%, #3A7BD5 50%, #6BA3E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neo-brutalist offset shadows */
+.shadow-brutal {
+  box-shadow: 4px 4px 0 var(--rt-foreground);
+}
+.shadow-brutal-lg {
+  box-shadow: 6px 6px 0 var(--rt-foreground);
+}
+.shadow-brutal-accent {
+  box-shadow: 4px 4px 0 var(--rt-accent);
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Dashed connector line for steps */
@@ -138,34 +142,12 @@ h1, h2, h3 {
   top: 2rem;
   left: calc(100% - 1px);
   width: calc(100% - 4rem);
-  height: 1px;
+  height: 2px;
   background: repeating-linear-gradient(
     90deg,
-    var(--rt-border) 0,
-    var(--rt-border) 6px,
+    var(--rt-border-subtle) 0,
+    var(--rt-border-subtle) 6px,
     transparent 6px,
     transparent 12px
   );
-}
-
-/* Semantic typography utilities */
-.section-label {
-  font-family: var(--font-geist-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.section-heading {
-  font-family: var(--font-syne);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.section-body {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--color-text-secondary);
 }

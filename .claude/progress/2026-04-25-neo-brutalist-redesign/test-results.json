@@ -1,0 +1,309 @@
+{
+  "failures": [
+    {
+      "page": "/",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "375",
+      "category": "Content",
+      "issue": "Bracketed mono text visible: [TRADE]",
+      "severity": "Major"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "768",
+      "category": "Content",
+      "issue": "Bracketed mono text visible: [TRADE]",
+      "severity": "Major"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "1440",
+      "category": "Content",
+      "issue": "Bracketed mono text visible: [TRADE]",
+      "severity": "Major"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "375",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "768",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "1440",
+      "category": "Hydration",
+      "issue": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR",
+      "severity": "Critical"
+    }
+  ],
+  "warnings": [
+    {
+      "page": "/",
+      "breakpoint": "375",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/",
+      "breakpoint": "768",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/",
+      "breakpoint": "1440",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "375",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "768",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/services",
+      "breakpoint": "1440",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "375",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "768",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/about",
+      "breakpoint": "1440",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "375",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "768",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    },
+    {
+      "page": "/contact",
+      "breakpoint": "1440",
+      "category": "Color Token",
+      "issue": "Old bright blue (#3B82F6/#2563EB) still in use on: a.text-sm font-bold transition-colors duration-200 text-[var(-: rgb(37, 99, 235)"
+    }
+  ],
+  "passes": [
+    "No page errors on home @ 375px",
+    "No [BRACKETED] text on home @ 375px",
+    "No horizontal scroll on home @ 375px",
+    "No theme toggle on home @ 375px",
+    "Navbar is sticky on home @ 375px",
+    "Hamburger menu found on home @ mobile",
+    "H1 uses Syne font on home @ 375px",
+    "No text overflow on home @ 375px",
+    "All images have alt text on home @ 375px",
+    "Single H1 present on home @ 375px",
+    "No page errors on home @ 768px",
+    "No [BRACKETED] text on home @ 768px",
+    "No horizontal scroll on home @ 768px",
+    "No theme toggle on home @ 768px",
+    "Navbar is sticky on home @ 768px",
+    "H1 uses Syne font on home @ 768px",
+    "No text overflow on home @ 768px",
+    "All images have alt text on home @ 768px",
+    "Single H1 present on home @ 768px",
+    "No page errors on home @ 1440px",
+    "No [BRACKETED] text on home @ 1440px",
+    "No horizontal scroll on home @ 1440px",
+    "No theme toggle on home @ 1440px",
+    "Navbar is sticky on home @ 1440px",
+    "H1 uses Syne font on home @ 1440px",
+    "No text overflow on home @ 1440px",
+    "All images have alt text on home @ 1440px",
+    "Single H1 present on home @ 1440px",
+    "Canvas animation element present on homepage",
+    "No page errors on services @ 375px",
+    "No horizontal scroll on services @ 375px",
+    "No theme toggle on services @ 375px",
+    "Navbar is sticky on services @ 375px",
+    "Hamburger menu found on services @ mobile",
+    "H1 uses Syne font on services @ 375px",
+    "No text overflow on services @ 375px",
+    "All images have alt text on services @ 375px",
+    "Single H1 present on services @ 375px",
+    "No page errors on services @ 768px",
+    "No horizontal scroll on services @ 768px",
+    "No theme toggle on services @ 768px",
+    "Navbar is sticky on services @ 768px",
+    "H1 uses Syne font on services @ 768px",
+    "No text overflow on services @ 768px",
+    "All images have alt text on services @ 768px",
+    "Single H1 present on services @ 768px",
+    "No page errors on services @ 1440px",
+    "No horizontal scroll on services @ 1440px",
+    "No theme toggle on services @ 1440px",
+    "Navbar is sticky on services @ 1440px",
+    "H1 uses Syne font on services @ 1440px",
+    "No text overflow on services @ 1440px",
+    "All images have alt text on services @ 1440px",
+    "Single H1 present on services @ 1440px",
+    "No page errors on about @ 375px",
+    "No [BRACKETED] text on about @ 375px",
+    "No horizontal scroll on about @ 375px",
+    "No theme toggle on about @ 375px",
+    "Navbar is sticky on about @ 375px",
+    "Hamburger menu found on about @ mobile",
+    "H1 uses Syne font on about @ 375px",
+    "No text overflow on about @ 375px",
+    "All images have alt text on about @ 375px",
+    "Single H1 present on about @ 375px",
+    "No page errors on about @ 768px",
+    "No [BRACKETED] text on about @ 768px",
+    "No horizontal scroll on about @ 768px",
+    "No theme toggle on about @ 768px",
+    "Navbar is sticky on about @ 768px",
+    "H1 uses Syne font on about @ 768px",
+    "No text overflow on about @ 768px",
+    "All images have alt text on about @ 768px",
+    "Single H1 present on about @ 768px",
+    "No page errors on about @ 1440px",
+    "No [BRACKETED] text on about @ 1440px",
+    "No horizontal scroll on about @ 1440px",
+    "No theme toggle on about @ 1440px",
+    "Navbar is sticky on about @ 1440px",
+    "H1 uses Syne font on about @ 1440px",
+    "No text overflow on about @ 1440px",
+    "All images have alt text on about @ 1440px",
+    "Single H1 present on about @ 1440px",
+    "No page errors on contact @ 375px",
+    "No [BRACKETED] text on contact @ 375px",
+    "No horizontal scroll on contact @ 375px",
+    "No theme toggle on contact @ 375px",
+    "Navbar is sticky on contact @ 375px",
+    "Hamburger menu found on contact @ mobile",
+    "H1 uses Syne font on contact @ 375px",
+    "No text overflow on contact @ 375px",
+    "All images have alt text on contact @ 375px",
+    "Single H1 present on contact @ 375px",
+    "No page errors on contact @ 768px",
+    "No [BRACKETED] text on contact @ 768px",
+    "No horizontal scroll on contact @ 768px",
+    "No theme toggle on contact @ 768px",
+    "Navbar is sticky on contact @ 768px",
+    "H1 uses Syne font on contact @ 768px",
+    "No text overflow on contact @ 768px",
+    "All images have alt text on contact @ 768px",
+    "Single H1 present on contact @ 768px",
+    "No page errors on contact @ 1440px",
+    "No [BRACKETED] text on contact @ 1440px",
+    "No horizontal scroll on contact @ 1440px",
+    "No theme toggle on contact @ 1440px",
+    "Navbar is sticky on contact @ 1440px",
+    "H1 uses Syne font on contact @ 1440px",
+    "No text overflow on contact @ 1440px",
+    "All images have alt text on contact @ 1440px",
+    "Single H1 present on contact @ 1440px"
+  ],
+  "screenshots": [
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/home-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/home-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/home-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/services-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/services-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/services-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/about-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/about-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/about-1440.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/contact-375.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/contact-768.png",
+    "/Users/mahirhaque/Documents/Coding/WebLab website/.claude/progress/2026-04-25-neo-brutalist-redesign/screenshots/contact-1440.png"
+  ]
+}
