@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { SITE_CONFIG } from '@/lib/constants';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import ContactForm from '@/components/contact/ContactForm';
+import CalendarEmbed from '@/components/contact/CalendarEmbed';
 
 export const metadata: Metadata = {
-  title: 'Contact WebLab Sydney — Get in Touch',
+  title: 'Contact WebLab Sydney — Book a Call or Get in Touch',
   description:
-    'Get in touch with WebLab Sydney. Send us a message and we\u2019ll get back to you within 24 hours. We work with service businesses across Sydney and NSW.',
+    'Book a free strategy call or send us a message. WebLab Sydney works with service businesses across Sydney and NSW.',
   keywords: [
     'contact WebLab Sydney',
-    'get in touch Sydney',
+    'book a call Sydney',
     'software agency contact Sydney',
     'digital agency Sydney quote',
   ],
   openGraph: {
-    title: 'Contact WebLab | Get in Touch',
+    title: 'Contact WebLab | Book a Call or Get in Touch',
     description:
-      'Ready to automate your lead flow? Send us a message and we\u2019ll be in touch within 24 hours.',
+      'Book a free strategy call or send us a message. We work with service businesses across Sydney and NSW.',
   },
 };
 
@@ -35,21 +36,65 @@ export default function ContactPage() {
                 Let&apos;s Chat
               </h1>
               <p className="text-[var(--color-text-muted)] text-lg max-w-xl mx-auto">
-                Drop us a message and we&apos;ll get back to you within a day. No sales pitch, promise.
+                Book a free strategy call or drop us a message. No sales pitch, promise.
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Split layout */}
-      <section className="bg-[var(--color-background)] pb-20 sm:pb-28">
+      {/* Calendar Booking Section */}
+      <section
+        id="book-a-call"
+        className="bg-[var(--color-background)] pb-16 sm:pb-20 scroll-mt-24"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl font-black text-[var(--color-text-primary)] mb-3">
+                Book a Free Strategy Call
+              </h2>
+              <p className="text-[var(--color-text-muted)] text-base max-w-lg mx-auto">
+                Pick a time that works for you. We&apos;ll discuss your business goals and how we can help.
+              </p>
+            </div>
+            <CalendarEmbed />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Divider — "or" separator between calendar and form */}
+      <div className="bg-[var(--color-background)]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4">
+            <div className="flex-1 h-px bg-[var(--color-foreground)]" />
+            <span className="text-sm font-bold text-[var(--color-text-dim)] uppercase tracking-widest">
+              or
+            </span>
+            <div className="flex-1 h-px bg-[var(--color-foreground)]" />
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Form Section */}
+      <section className="bg-[var(--color-background)] pt-16 sm:pt-20 pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-black text-[var(--color-text-primary)] mb-3">
+                Or Send Us a Message
+              </h2>
+              <p className="text-[var(--color-text-muted)] text-base max-w-lg mx-auto">
+                Not ready for a call? Drop us a message and we&apos;ll get back to you within 24 hours.
+              </p>
+            </div>
+          </AnimatedSection>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left: Contact info + extra cards */}
             <AnimatedSection>
               <div className="flex flex-col gap-6">
-                {/* Contact Details */}
+                {/* Contact Details card */}
                 <div className="rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-surface)] p-6 sm:p-8 shadow-brutal">
                   <h2 className="text-xl font-black text-[var(--color-text-primary)] mb-6">
                     Contact Details
@@ -104,7 +149,7 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                {/* Response Time */}
+                {/* Response Time card */}
                 <div className="rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-surface)] p-6 sm:p-8 shadow-brutal">
                   <div className="flex items-start gap-4">
                     <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center flex-shrink-0">
@@ -123,7 +168,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Business Hours */}
+                {/* Business Hours card — "to" not dashes */}
                 <div className="rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-surface)] p-6 sm:p-8 shadow-brutal">
                   <div className="flex items-start gap-4">
                     <div className="w-9 h-9 rounded-lg bg-[var(--color-accent-dim)] border-2 border-[var(--color-accent)]/20 flex items-center justify-center flex-shrink-0">
@@ -136,16 +181,16 @@ export default function ContactPage() {
                         Business Hours
                       </h3>
                       <p className="text-[var(--color-text-muted)] text-sm">
-                        Mon–Fri: 8am–6pm AEST
+                        Mon to Fri: 8am to 6pm AEST
                       </p>
                       <p className="text-[var(--color-text-muted)] text-sm">
-                        Sat–Sun: By appointment
+                        Sat to Sun: By appointment
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Connect With Us */}
+                {/* Connect With Us card */}
                 <div className="rounded-2xl border-2 border-[var(--color-foreground)] bg-[var(--color-surface)] p-6 sm:p-8 shadow-brutal">
                   <h3 className="text-sm font-black text-[var(--color-text-primary)] mb-3">
                     Connect With Us
