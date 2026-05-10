@@ -631,7 +631,7 @@ export const FEATURE_PAGE_DATA: Record<string, ServicePageData> = {
   },
 };
 
-export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '/contact';
+export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? '/contact#book-a-call';
 export const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL ?? '';
 
 export const WAVE_COLORS = {
